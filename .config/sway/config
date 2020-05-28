@@ -322,7 +322,8 @@ for_window [class="Clipgrab"] floating enable
 for_window [title="About .* Firefox"] floating enable
 for_window [title="Compress"] floating enable
 for_window [title="Compress"] resize set 800 400
-
+for_window [title="KeePass.*"] floating enable
+for_window [title="KeePass.*"] resize set 1600 800
 
 #switch to worksapce with urgent window automatically
 for_window [urgent=latest] focus
