@@ -1,0 +1,1 @@
+spotifyd -d "Typical" -u "$SPOTIFY_USER" -p "$SPOTIFY_PASS"; spt; killall spotifyd
