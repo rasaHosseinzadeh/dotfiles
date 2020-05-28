@@ -1,0 +1,410 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+# Autostart
+# exec_always nm-applet
+exec_always mako -c ~/.config/mako/config
+exec_always udiskie --no-notify --tray
+# exec --no-startup-id xfce4-power-manager
+
+# GTK-3 themes and icons (Does not work)
+# exec_always ~/.config/sway/import-gsettings \
+#    gtk-theme:gtk-theme-name \
+#    icon-theme:gtk-icon-theme-name \
+#    cursor-theme:gtk-cursor-theme-name
+
+exec_always gsettings set org.gnome.desktop.interface gtk-theme "Flat-Remix-GTK-Blue-Dark"
+exec_always gsettings set org.gnome.desktop.interface icon-theme "Flat-Remix-Blue-Dark"
+
+bar {
+    swaybar_command waybar
+}
+
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Set backgound
+set $bgdir  ~/Pic/0275.jpg
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+set $term alacritty
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+# set $menu dmenu_path | dmenu | xargs swaymsg exec --
+## Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+output * bg $bgdir fill
+# 
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+### Idle configuration
+#
+# Example configuration:
+#
+exec swayidle -w \
+	timeout 300 'convert $bgdir -resize 800x450 /tmp/re.png && convert /tmp/re.png  -blur 20x15 /tmp/blurshot.png && \
+		swaylock -i /tmp/blurshot.png -F -f --font-size 100 --indicator-idle-visible --indicator-radius 400 --indicator-thickness 80 && \
+		rm /tmp/blurshot.png /tmp/re.png &' \
+	timeout 600 'swaymsg "output * dpms off"' \
+		resume 'swaymsg "output * dpms on"' \
+	before-sleep ' convert $bgdir -resize 800x450 /tmp/re.png && convert /tmp/re.png -blur 20x15 /tmp/blurshot.png && \
+		swaylock -i /tmp/blurshot.png -F -f --font-size 100 --indicator-idle-visible --indicator-radius 400 --indicator-thickness 80 && \
+		rm /tmp/blurshot.png /tmp/re.png &'
+
+xwayland disable
+
+
+
+# exec swayidle -w \
+#    timeout 300 'swaylock -c 000000 -F -f --font-size 100 --indicator-idle-visible --indicator-radius 400 --indicator-thickness 80' \
+#    timeout 600 'swaymsg "output * dpms off"' \
+#    resume 'swaymsg "output * dpms on"' \
+#    before-sleep 'swaylock -c 000000 -F -f --font-size 100 --indicator-idle-visible --indicator-radius 400 --indicator-thickness 80'
+### Lock key
+bindsym $mod+Shift+q exec convert $bgdir -resize 800x450 /tmp/re.png && convert /tmp/re.png -blur 20x15 /tmp/blurshot.png && swaylock -i /tmp/blurshot.png -F -f --font-size 100 --indicator-idle-visible --indicator-radius 400 --indicator-thickness 80 && exec rm /tmp/blurshot.png /tmp/re.png
+### HiDpi Don't bother works poorly
+output eDP-1 scale 2
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+##### Border
+default_border pixel 1
+default_floating_border normal
+hide_edge_borders none
+# change borders
+bindsym $mod+u border none
+bindsym $mod+y pixel 1
+bindsym $mod+n border normal
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar P{ block below.
+# font xft:URWGothic-Book 11
+### Input configuration
+#
+# Example configuration:
+#
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+input type:touch {
+    events disabled
+}
+
+input type:keyboard {
+    xkb_layout us,ir
+    xkb_options grp:alt_shift_toggle,caps:escape
+}
+
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+    dwt enabled
+    pointer_accel 0.5 # set mouse sensitivity (between -1 and 1)
+    drag enabled
+}
+
+
+### Key bindings
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+Return exec $term
+
+    # Kill focused window
+    bindsym $mod+q kill
+
+    # Start your launcher (dmenu)
+    # bindsym $mod+space exec dmenu_run -c -h 40 -i -fn 'Terminus:size=20' -l 10 -nb '#002b36' -nf '#839496' -sb '#073642' -sf '#93a1a1'
+    # Start your launcher (bemenu)
+    bindsym $mod+space exec bemenu-run -ifn --nf '#e04613' --nb '#3b3b3b' --sf '#e04613' --sb '#000000' --fn "Hack Regular Nerd 18" -H 30 -w -l10 -p "" -P ">" 
+    #bindsym $mod+space exec bemenu-run --nb "#002b36" --nf "#839496" --hb "#073642" --hf "#93a1a1" --fn "Hack Regular Nerd 18" -H 30 -w -l10 -p "" -P ">" Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Shift+r reload
+    # restart i3 inplace (preserves you layout/sesion, can be used to upgrade i3)
+    bindsym $mod+Ctrl+r restart
+    # Zoom twice
+    bindsym $mod+Shift+z exec sed -i '0,/scale 1/s//scale 2/' ~/.config/sway/config
+    # Zoom normal
+    bindsym $mod+Shift+x exec sed -i '0,/scale 2/s//scale 1/' ~/.config/sway/config
+
+    # Exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+#
+# Moving around:
+#
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+    # Or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+    # Ditto, with arrow keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+#
+# Workspaces:
+#
+    # Switch to workspace
+    bindsym $mod+1 workspace 1
+    bindsym $mod+2 workspace 2
+    bindsym $mod+3 workspace 3
+    bindsym $mod+4 workspace 4
+    bindsym $mod+5 workspace 5
+    bindsym $mod+6 workspace 6
+    bindsym $mod+7 workspace 7
+    bindsym $mod+8 workspace 8
+    bindsym $mod+9 workspace 9
+    bindsym $mod+0 workspace 10
+    # Move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace 1
+    bindsym $mod+Shift+2 move container to workspace 2
+    bindsym $mod+Shift+3 move container to workspace 3
+    bindsym $mod+Shift+4 move container to workspace 4
+    bindsym $mod+Shift+5 move container to workspace 5
+    bindsym $mod+Shift+6 move container to workspace 6
+    bindsym $mod+Shift+7 move container to workspace 7
+    bindsym $mod+Shift+8 move container to workspace 8
+    bindsym $mod+Shift+9 move container to workspace 9
+    bindsym $mod+Shift+0 move container to workspace 10
+    # Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
+    bindsym $mod+t toggle
+
+    # Switch the current container between different layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+    bindsym $mod+Shift+s sticky toggle
+    bindsym $mod+Shift+b layout splith
+    bindsym $mod+Shift+v layout splitv
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+Mod1+space focus mode_toggle
+
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
+    #Move focus to the child container
+    bindsym $mod+c focus child
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym Mod1+r mode "resize"
+
+# Media Fn keybindings
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessDown exec sudo brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec sudo brightnessctl set +5%
+bindsym XF86AudioPlay exec playerctl play-pause 
+bindsym XF86AudioNext exec playerctl next 
+bindsym XF86AudioPrev exec playerctl previous 
+
+#Volume Control
+bindsym $mod+Mod1+v exec pavucontrol
+# Application keybindings
+bindsym $mod+Mod1+h exec pcmanfm
+bindsym $mod+Mod1+w exec firefox
+bindsym $mod+Mod1+b exec qutebrowser
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+#bar {
+#     position top
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+#    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+
+#    colors {
+#        statusline #ffffff
+#        background #323232
+#        inactive_workspace #32323200 #32323200 #5c5c5c
+#    }
+#}
+
+# workspace back and forth (with/without active container)
+
+bindsym Mod1+Ctrl+Left workspace prev
+bindsym Mod1+Ctrl+Right workspace next
+
+# Open specific applications in floating mode
+for_window [title="Volume Control"] floating enable
+for_window [title="Volume Control"] resize set 800 400
+for_window [class="Clipgrab"] floating enable
+for_window [title="About .* Firefox"] floating enable
+for_window [title="Compress"] floating enable
+for_window [title="Compress"] resize set 800 400
+
+
+#switch to worksapce with urgent window automatically
+for_window [urgent=latest] focus
+# Color palette used for the terminal ( ~/.Xresources file )
+# Colors are gathered based on the documentation:
+# https://i3wm.org/docs/userguide.html#xresources
+# Change the variable name at the place you want to match the color
+# of your terminal like this:
+# [example]
+# If you want your bar to have the same background color as your 
+# terminal background change the line 362 from:
+# background #14191D
+# to:
+
+# Theme colors
+# class                   border  backgr. text    indic.   child_border
+  client.focused          #556064 #ff0000 #80FFF9 #FDF6E3
+  client.focused_inactive #2F3D44 #2F3D44 #AD69AF #454948
+  client.unfocused        #2F3D44 #2F3D44 #AD69AF #454948
+  client.urgent           #CB4B16 #FDF6E3 #AD69AF #268BD2
+  client.placeholder      #000000 #0c0c0c #ffffff #000000 
+
+  client.background       #2B2C2B
+
+#############################
+### settings for i3-gaps: ###
+#############################
+
+# Set inner/outer gaps
+gaps inner 2
+gaps outer 0
+
+# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
+# gaps inner|outer current|all set|plus|minus <px>
+# gaps inner all set 10
+# gaps outer all plus 5
+
+# Smart gaps (gaps used if only more than one container on the workspace)
+smart_gaps on
+
+# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+smart_borders on
+
+# Press $mod+Shift+g to enter the gap mode. 
+# Choose o or i for modifying outer/inner gaps.
+# Press one of + / - (in-/decrement for current workspace) 
+# or 0 (remove gaps for current workspace). If you also press Shift 
+# with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+include /etc/sway/config.d/*
