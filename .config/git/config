@@ -1,0 +1,5 @@
+[user]
+	email = rasa.hosseinzadeh@gmail.com
+	name = Rasa
+[core]
+	excludesFile = $HOME/.config/git/.gitignore

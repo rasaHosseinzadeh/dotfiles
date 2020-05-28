@@ -1,0 +1,19 @@
+.apdisk
+.AppleDB
+.AppleDesktop
+.AppleDouble
+composer.lock
+.DS_Store
+Icon
+.idea
+.LSOverride
+Network\ Trash\ Folder
+node_modules
+package-lock.json
+.project
+.Spotlight-V100
+Temporary\ Items
+.Trash
+.Trash-*
+.Trashes
+[Tt]humbs.db
