@@ -115,7 +115,7 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' matcher-list ''
 zstyle ':completion:*' menu select=1
-zstyle :compinstall filename '/home/rasa/.config//.zshrc'
+zstyle :compinstall filename "$HOME/.config//.zshrc"
 
 autoload -Uz compinit
 compinit
@@ -143,3 +143,4 @@ cd() {
     fi
 }
 
+export PS1=%F{cyan}[%f%(!.%F{red}%n%f.%F{green}%n%f)%F{cyan}@%f${p_host}%F{cyan}]%F{green}%F{blue}%~%f %F{242}$(gitprompt)%f%(12V.%F{242}%12v%f.)%(?.%F{green}.%F{red})❯%f
