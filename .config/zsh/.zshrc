@@ -143,4 +143,3 @@ cd() {
     fi
 }
 
-export PS1=%F{cyan}[%f%(!.%F{red}%n%f.%F{green}%n%f)%F{cyan}@%f${p_host}%F{cyan}]%F{green}%F{blue}%~%f %F{242}$(gitprompt)%f%(12V.%F{242}%12v%f.)%(?.%F{green}.%F{red})❯%f
