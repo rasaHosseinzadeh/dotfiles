@@ -91,3 +91,7 @@ call deoplete#custom#var('omni', 'input_patterns', {
       \})
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 "####################
+
+" Copy Paste Support
+set clipboard=unnamedplus
+" ##########################
