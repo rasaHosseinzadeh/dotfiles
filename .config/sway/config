@@ -324,7 +324,8 @@ for_window [title="Compress"] floating enable
 for_window [title="Compress"] resize set 800 400
 for_window [title="KeePass.*"] floating enable
 for_window [title="KeePass.*"] resize set 1600 800
-
+for_window [app_id="mpv"] floating enable
+for_window [app_id="mpv"] resize set 1040 585
 #switch to worksapce with urgent window automatically
 for_window [urgent=latest] focus
 # Color palette used for the terminal ( ~/.Xresources file )
