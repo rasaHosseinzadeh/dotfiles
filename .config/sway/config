@@ -29,7 +29,7 @@ bar {
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Set backgound
-set $bgdir  ~/Pic/0275.jpg
+set $bgdir  ~/Pictures/bg.jpg
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -57,14 +57,12 @@ output * bg $bgdir fill
 # Example configuration:
 #
 exec swayidle -w \
-	timeout 300 'convert $bgdir -resize 800x450 /tmp/re.png && convert /tmp/re.png  -blur 20x15 /tmp/blurshot.png && \
-		swaylock -i /tmp/blurshot.png -F -f --font-size 100 --indicator-idle-visible --indicator-radius 400 --indicator-thickness 80 && \
-		rm /tmp/blurshot.png /tmp/re.png &' \
+	timeout 300 'swaylock -i $bgdir -F -f --font-size 100 --indicator-idle-visible --indicator-radius 400 --indicator-thickness 80' \
 	timeout 600 'swaymsg "output * dpms off"' \
-		resume 'swaymsg "output * dpms on"' \
-	before-sleep ' convert $bgdir -resize 800x450 /tmp/re.png && convert /tmp/re.png -blur 20x15 /tmp/blurshot.png && \
-		swaylock -i /tmp/blurshot.png -F -f --font-size 100 --indicator-idle-visible --indicator-radius 400 --indicator-thickness 80 && \
-		rm /tmp/blurshot.png /tmp/re.png &'
+	resume 'swaymsg "output * dpms on"' \
+	before-sleep 'swaylock -i $bgdir -F -f --font-size 100 --indicator-idle-visible --indicator-radius 400 --indicator-thickness 80' \
+
+bindsym $mod+Shift+q exec systemctl suspend-then-hibernate
 
 xwayland disable
 
@@ -76,7 +74,7 @@ xwayland disable
 #    resume 'swaymsg "output * dpms on"' \
 #    before-sleep 'swaylock -c 000000 -F -f --font-size 100 --indicator-idle-visible --indicator-radius 400 --indicator-thickness 80'
 ### Lock key
-bindsym $mod+Shift+q exec convert $bgdir -resize 800x450 /tmp/re.png && convert /tmp/re.png -blur 20x15 /tmp/blurshot.png && swaylock -i /tmp/blurshot.png -F -f --font-size 100 --indicator-idle-visible --indicator-radius 400 --indicator-thickness 80 && exec rm /tmp/blurshot.png /tmp/re.png
+#bindsym $mod+Shift+q exec convert $bgdir -resize 800x450 /tmp/re.png && convert /tmp/re.png -blur 20x15 /tmp/blurshot.png && swaylock -i /tmp/blurshot.png -F -f --font-size 100 --indicator-idle-visible --indicator-radius 400 --indicator-thickness 80 && exec rm /tmp/blurshot.png /tmp/re.png
 ### HiDpi Don't bother works poorly
 output eDP-1 scale 2
 #
@@ -86,7 +84,7 @@ output eDP-1 scale 2
 ##### Border
 default_border pixel 1
 default_floating_border normal
-hide_edge_borders none
+hide_edge_borders smart
 # change borders
 bindsym $mod+u border none
 bindsym $mod+y pixel 1
@@ -340,14 +338,18 @@ for_window [urgent=latest] focus
 # to:
 
 # Theme colors
-# class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #ff0000 #80FFF9 #FDF6E3
-  client.focused_inactive #2F3D44 #2F3D44 #AD69AF #454948
-  client.unfocused        #2F3D44 #2F3D44 #AD69AF #454948
-  client.urgent           #CB4B16 #FDF6E3 #AD69AF #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000 
 
-  client.background       #2B2C2B
+set $cl_high #009ddc
+set $cl_indi #d9d8d8
+set $cl_back #231f20
+set $cl_fore #d9d8d8
+set $cl_urge #ee2e24
+
+# Colors                border   bg       text     indi     childborder
+client.focused          $cl_high $cl_high $cl_fore $cl_indi $cl_high
+client.focused_inactive $cl_back $cl_back $cl_fore $cl_back $cl_back
+client.unfocused        $cl_back $cl_back $cl_fore $cl_back $cl_back
+client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
 
 #############################
 ### settings for i3-gaps: ###
