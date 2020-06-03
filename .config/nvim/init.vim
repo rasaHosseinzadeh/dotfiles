@@ -81,9 +81,10 @@ let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
-nnoremap  lb :VimtexCompile<CR>
-nnoremap  lc :VimtexClean<CR>
-nnoremap  lv :VimtexView<CR>
+nnoremap  <leader>lb :VimtexCompile<CR>
+nnoremap  <leader>lc :VimtexClean<CR>
+nnoremap  <leader>lv :VimtexView<CR>
+nnoremap  <leader>le :VimtexErrors<CR>
 "############################
 
 
@@ -91,7 +92,7 @@ nnoremap  lv :VimtexView<CR>
 setlocal spell
 set spelllang=en_us
 nnoremap <silent> <F11> :set spell!<CR>
-inoremap <silent> <F11> <C-O>:set spell!<CR>
+"inoremap <silent> <F11> <C-O>:set spell!<CR>
 "inoremap /C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 " #############################
 
@@ -126,14 +127,14 @@ let g:EasyMotion_smartcase = 1
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
-nnoremap s <Plug>(easymotion-overwin-f)
+map s <Plug>(easymotion-overwin-f)
 " or
 " `s{char}{char}{label}`
 " Need one more keystroke, but on average, it may be more comfortable.
-nnoremap <Leader>s <Plug>(easymotion-overwin-f2)
+map <Leader>s <Plug>(easymotion-overwin-f2)
 " JK motions: Line motions
-noremap <Leader>k <Plug>(easymotion-k)
-noremap <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>j <Plug>(easymotion-j)
 "##########################
 
 " Key mappings
