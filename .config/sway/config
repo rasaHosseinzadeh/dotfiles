@@ -157,6 +157,7 @@ input type:touchpad {
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+s exec swaynag -t warning -m 'You pressed the shutdown shortcut.' -b 'Shutdown' 'shutdown now' -b 'Restart' 'shutdown -r now'
 #
 # Moving around:
 #
@@ -222,7 +223,7 @@ input type:touchpad {
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
-    bindsym $mod+Shift+s sticky toggle
+    # bindsym $mod+Shift+s sticky toggle
     bindsym $mod+Shift+b layout splith
     bindsym $mod+Shift+v layout splitv
     # Make the current focus fullscreen
@@ -330,6 +331,8 @@ for_window [app_id="dict"] floating enable
 for_window [app_id="imv"] floating enable
 for_window [app_id="transmission-gtk"] floating enable
 for_window [app_id="transmission-gtk"] resize set 1040 585
+for_window [title="Library"] floating enable
+for_window [title="Library"] resize set 1200 675
 #switch to worksapce with urgent window automatically
 for_window [urgent=latest] focus
 # Color palette used for the terminal ( ~/.Xresources file )

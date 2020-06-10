@@ -1,0 +1,7 @@
+while true;
+do
+    killall swaybg
+    img=$(ls ~/Pictures/Wallpaper/ | shuf -n1)
+    swaybg -i ~/Pictures/Wallpaper/$img &
+    sleep 5m
+done
