@@ -326,6 +326,8 @@ for_window [app_id="mpv"] floating enable
 for_window [app_id="mpv"] resize set 1040 585
 for_window [app_id="dict"] floating enable
 for_window [app_id="imv"] floating enable
+for_window [app_id="transmission-gtk"] floating enable
+for_window [app_id="transmission-gtk"] resize set 1040 585
 #switch to worksapce with urgent window automatically
 for_window [urgent=latest] focus
 # Color palette used for the terminal ( ~/.Xresources file )
