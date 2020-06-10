@@ -8,6 +8,7 @@
 # exec_always nm-applet
 exec_always mako -c ~/.config/mako/config
 exec_always udiskie --no-notify --tray
+exec_always ~/.scripts/wallpaper
 # exec --no-startup-id xfce4-power-manager
 
 # GTK-3 themes and icons (Does not work)
@@ -29,7 +30,8 @@ bar {
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Set backgound
-set $bgdir  ~/Pictures/bg.jpg
+# set $bgdir  ~/Pictures/
+
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -44,7 +46,7 @@ set $term alacritty
 ## Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $bgdir fill
+# output * bg $bgdir fill
 # 
 # Example configuration:
 #
