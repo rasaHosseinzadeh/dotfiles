@@ -12,7 +12,8 @@ settings:
     global:
       normal:
         <ALT-u: set tabs.show switching
-        <Alt+t>: config-cycle statusbar.hide ;; config-cycle tabs.show always switching
+        <Alt+t>: config-cycle statusbar.show always never ;; config-cycle tabs.show
+          always switching
         <Ctrl+Shift+y>: hint links spawn --detach mpv --force-window yes {hint-url}
   colors.downloads.bar.bg:
     global: darkgrey
@@ -23,25 +24,34 @@ settings:
   colors.statusbar.insert.bg:
     global: '#1DA1F2'
   colors.tabs.bar.bg:
-    global: '#555555'
+    global: '#1DA1F2'
   colors.webpage.bg:
     global: white
   colors.webpage.darkmode.enabled:
     global: true
-  content.headers.user_agent:
-    global: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like
-      Gecko) Chrome/81.0.4044.129 Safari/537.36
   downloads.location.directory:
     global: ~/Downloads/
-  statusbar.hide:
-    global: true
+  statusbar.show:
+    global: always
   tabs.background:
     global: true
+  tabs.favicons.scale:
+    global: 1.0
+  tabs.indicator.padding:
+    global:
+      bottom: 0
+      left: 0
+      right: 0
+      top: 0
+  tabs.indicator.width:
+    global: 0
   tabs.max_width:
     global: -1
+  tabs.min_width:
+    global: -1
   tabs.position:
-    global: top
+    global: bottom
   tabs.show:
-    global: switching
+    global: always
   tabs.width:
-    global: 5%
+    global: 2%
