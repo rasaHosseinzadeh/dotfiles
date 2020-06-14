@@ -1,0 +1,2 @@
+img=$(< ~/.local/share/bgdir/bgdir)
+swaylock -i $img -F -f --font-size 100 --indicator-idle-visible --indicator-radius 400 --indicator-thickness 80
