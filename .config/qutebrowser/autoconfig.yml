@@ -55,3 +55,7 @@ settings:
     global: always
   tabs.width:
     global: 2%
+  url.default_page:
+    global: about:blank
+  url.start_pages:
+    global: about:blank

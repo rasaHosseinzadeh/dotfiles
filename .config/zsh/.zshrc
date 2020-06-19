@@ -1,5 +1,3 @@
-# Extend Path
-export PATH=$PATH:~/.scripts/
 # Vim like keybindings
 bindkey -v
 # Arrow keys to search only the matching
@@ -70,8 +68,6 @@ alias egrep='egrep --colour=auto'
 alias ls='ls --color=auto --human-readable --group-directories-first --classify'
 alias lsa='ls --color=auto --human-readable --group-directories-first --classify -la'
 alias ~="cd ~"
-alias .="cd .."
-alias ..="cd ..;cd .."
 alias grep=rg
 alias dots='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 #------------------------------
