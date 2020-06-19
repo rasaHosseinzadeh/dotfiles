@@ -123,19 +123,9 @@ compinit
 source ~/.config/zsh/git-prompt.zsh
 source ~/.config/zsh/prompt.zsh
 
-# Fancy cd that can cd into parent directory, if trying to cd into file.
-# useful with ^F fuzzy searcher.
-cd() {
-    if (( $+2 )); then
-        builtin cd "$@"
-        return 0
-    fi
 
-    if [ -f "$1" ]; then
-        echo "${yellow}cd ${1:h}${NC}" >&2
-        builtin cd "${1:h}"
-    else
-        builtin cd "${@}"
-    fi
-}
-
+#------------------------------
+# Z
+#------------------------------
+_Z_DATA=$HOME/.local/share/z/.z
+source ~/.config/zsh/z.sh
