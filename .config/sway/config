@@ -59,10 +59,10 @@ set $term alacritty
 # Example configuration:
 #
 exec swayidle -w \
-	timeout 300 'swaylock -i $bgdir -F -f --font-size 100 --indicator-idle-visible --indicator-radius 400 --indicator-thickness 80' \
+	timeout 300 'custom-swaylock' \
 	timeout 600 'swaymsg "output * dpms off"' \
 	resume 'swaymsg "output * dpms on"' \
-	before-sleep 'swaylock -i $bgdir -F -f --font-size 100 --indicator-idle-visible --indicator-radius 400 --indicator-thickness 80' \
+	before-sleep 'custom-swaylock'
 
 bindsym $mod+Shift+q exec systemctl suspend-then-hibernate
 
