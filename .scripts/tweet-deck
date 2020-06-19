@@ -1,1 +1,1 @@
-qutebrowser -B ~/.local/share/qt-tweet-deck/
+qutebrowser -B ~/.local/share/qt-tweet-deck/ -C ~/.config/qutebrowser/config.py

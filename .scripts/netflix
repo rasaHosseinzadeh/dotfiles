@@ -1,1 +1,1 @@
-qutebrowser -B ~/.local/share/qt-netflix/
+qutebrowser -B ~/.local/share/qt-netflix/ -C ~/.config/qutebrowser/config.py

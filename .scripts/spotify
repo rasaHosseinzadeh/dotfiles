@@ -1,1 +1,1 @@
-qutebrowser -B ~/.local/share/qt-spotify/
+qutebrowser -B ~/.local/share/qt-spotify/ -C ~/.config/qutebrowser/config.py
