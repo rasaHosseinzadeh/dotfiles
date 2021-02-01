@@ -66,7 +66,7 @@ exec swayidle -w \
 
 bindsym $mod+Shift+q exec systemctl suspend-then-hibernate
 
-xwayland disable
+# xwayland disable
 
 
 
@@ -151,9 +151,9 @@ input type:touchpad {
     # restart i3 inplace (preserves you layout/sesion, can be used to upgrade i3)
     bindsym $mod+Ctrl+r restart
     # Zoom twice
-    bindsym $mod+Shift+z exec sed -i '0,/scale 1/s//scale 2/' ~/.config/sway/config
+    bindsym $mod+Shift+z exec sed -i '0,/scale 2/s//scale 2/' ~/.config/sway/config
     # Zoom normal
-    bindsym $mod+Shift+x exec sed -i '0,/scale 2/s//scale 1/' ~/.config/sway/config
+    bindsym $mod+Shift+x exec sed -i '0,/scale 2/s//scale 2/' ~/.config/sway/config
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'

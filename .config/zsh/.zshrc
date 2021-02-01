@@ -43,6 +43,11 @@ if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.
 fi
 
 #------------------------------
+# Path
+#------------------------------
+PATH=$PATH:$HOME/.local/bin/
+
+#------------------------------
 # History stuff
 #------------------------------
 HISTFILE=~/.config/.histfile

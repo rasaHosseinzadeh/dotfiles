@@ -32,7 +32,7 @@ settings:
   downloads.location.directory:
     global: ~/Downloads/
   statusbar.show:
-    global: always
+    global: never
   tabs.background:
     global: true
   tabs.favicons.scale:
@@ -52,7 +52,7 @@ settings:
   tabs.position:
     global: bottom
   tabs.show:
-    global: always
+    global: switching
   tabs.width:
     global: 2%
   url.default_page:
