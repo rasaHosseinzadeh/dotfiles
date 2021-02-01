@@ -1,81 +1,104 @@
-set number relativenumber
-set hidden
-set paste
-set pastetoggle=<F2>
-syntax on
-set linebreak
-set textwidth=100
-set showmatch
-set visualbell
-set splitbelow splitright
-set wildmode=longest,list,full
+let mapleader = "\<Space>"			"Set leader to Space
+set number relativenumber           "Relative line numbering
+syntax enable                       "Syntax highlight
+set path+=**                        "Search for file recursively
+set wildmenu                        "Show menu in command mode
+set wildmode=list:longest,full      "Menu completion method
+command! MakeTags !ctags -R .       "Command to build tags
+set foldmethod=indent				"Enable folding
+set foldlevel=99
 
-"Split move keys
+"Indentation
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set fileformat=unix
+
+"Python Line length limit
+au BufNewFile,BufRead *.py
+    \ set textwidth=79
+
+"C Line length limit and indentation
+au BufNewFile,BufRead *.c, *.h, *.cpp, *.hpp
+    \ set textwidth=79
+    \ set cindent
+
+set hidden                          "Change buffer without writing
+set showmatch                       "Show matching brackets.
+set linebreak
+set visualbell
+set smartcase
+set cursorline                      "Highlight the current line
+set spell                           "Spell Checker
+set spelllang=en_us
+set mouse=a                         "Mouse Support
+set clipboard=unnamedplus           "Copy Paste Support
+set splitbelow splitright
+
+
+
+"Key mappings
+
+"Split Moving
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
-" ###############
-" Set Leader to Space
-let mapleader = "\<Space>"
 
-set hlsearch
-set smartcase
-set ignorecase
-set incsearch
- 
-set autoindent
-set cindent
-set expandtab
-set shiftwidth=4
-set smartindent	
-set smarttab
-set softtabstop=4
- 
- 
-set t_Co=256
-set undolevels=1000
-set backspace=indent,eol,start
- 
-set cursorline
+"Tab
+nnoremap tn :tabnew<CR>
+nnoremap tk :tabnext<CR>
+nnoremap tj :tabprev<CR>
 
+"Buffer
+nnoremap <leader>b :buffers<CR>:buffer<Space>
+nnoremap bk :bnext<CR>
+nnoremap bj :bprev<CR>
+
+":wq
+nnoremap <leader>s :w<CR>
+nnoremap <leader>w :bd<CR>
+nnoremap <leader>q :q<CR>
+
+"Comment
+nnoremap <leader>% :norm i% <CR>
+vnoremap <leader>% :norm i% <CR>
+vnoremap <leader>/ :norm i// <CR>
+nnoremap <leader>/ :norm i// <CR>
+vnoremap <leader># :norm i# <CR>
+nnoremap <leader># :norm i# <CR>
+"Uncomment
+nnoremap <leader>5 :norm ^x<CR>
+vnoremap <leader>5 :norm ^x<CR>
+"I hate highlight :)
+nnoremap <leader>h :noh<CR>
+"Reload vimrc
+nnoremap <leader>rv :source<Space>$HOME/.config/nvim/init.vim<CR>
+
+
+"Plugin
 call plug#begin()
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex'
-Plug 'preservim/nerdtree'
 Plug 'rakr/vim-one'
-Plug 'Shougo/deoplete.nvim'
-Plug 'tbodt/deoplete-tabnine'
-Plug 'easymotion/vim-easymotion' 
-Plug '907th/vim-auto-save'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'dense-analysis/ale'
 call plug#end()
 
-"############################
 
-" Autosave
-let g:auto_save_write_all_buffers = 1  " write all open buffers as if you would use :wa
-noremap <C-s> :AutoSaveToggle<CR>
-"############################
-
-" Airline Config
+"Airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme= 'deus'
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#formatter = 'default'
 
-"############################
-
-" Vim-One Theme
+"Vim-One Theme
 set termguicolors
 colorscheme one
 set background=dark
 hi Normal guibg=NONE ctermbg=NONE
-" ###################
 
-
-"  Vim-Tex
+"Vim-Tex
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
@@ -84,90 +107,16 @@ let g:tex_conceal='abdmg'
 nnoremap  <leader>lb :VimtexCompile<CR>
 nnoremap  <leader>lc :VimtexClean<CR>
 nnoremap  <leader>lv :VimtexView<CR>
-nnoremap  <leader>le :VimtexErrors<CR>
-"############################
 
+"You Complete Me
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-" Spell checker
-setlocal spell
-set spelllang=en_us
-nnoremap <silent> <F11> :set spell!<CR>
-"inoremap <silent> <F11> <C-O>:set spell!<CR>
-"inoremap /C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-" #############################
-
-" Mouse Support
-set mouse=a
-" ####################
-
-
-"Auto Complete
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#var('omni', 'input_patterns', {
-      \ 'tex': g:vimtex#re#deoplete
-      \})
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-"####################
-
-" Copy Paste Support
-set clipboard=unnamedplus
-" ##########################
-
-" NerdTree
-nnoremap <Leader>nd :NERDTreeToggle<CR>
-" #########################
-
-"CtrlP
-nnoremap <C-b> :CtrlPBuffer<CR>
-" ########################
-" Easy Motion Setting
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-let g:EasyMotion_use_smartsign_us = 1 " US layout
-let g:EasyMotion_smartcase = 1
-let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{label}`
-map s <Plug>(easymotion-overwin-f)
-" or
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-map <Leader>s <Plug>(easymotion-overwin-f2)
-" JK motions: Line motions
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>j <Plug>(easymotion-j)
-"##########################
-
-" Key mappings
-
-" tab stuff
-nnoremap tn :tabnew<CR>
-nnoremap tk :tabnext<CR>
-nnoremap tj :tabprev<CR>
-nnoremap th :tabfirst<CR>
-nnoremap tl :tablast<CR>
-
-" buffer stuff
-nnoremap <Leader>b :buffers<CR>:buffer<Space>
-nnoremap bn :bnext<CR>
-nnoremap bp :bprev<CR>
-nnoremap bq :bd<CR>
-" space-s to save
-nnoremap <leader>w :w<CR>
-
-" space-q to quit (doesn't save, watch out!)
-nnoremap <leader>q :q<CR>
-
-" Commenting
-
-" space-% insert "%" commenting
-nnoremap <leader>% :norm i%<CR>
-vnoremap <leader>% :norm i%<CR>
-
-" space-5 uncomment
-nnoremap <leader>5 :norm ^x<CR>
-vnoremap <leader>5 :norm ^x<CR>
-
-
-" Reload vimrc
-nnoremap <leader>rv :source<Space>$HOME/.config/nvim/init.vim<CR>
-
+"Ale
+let g:ale_linters = {
+\   'python': ['flake8'],
+\}
+let g:ale_fixers = {
+\    '*': ['remove_trailing_lines', 'trim_whitespace'],
+\}
+nmap <leader>f :ALEFix<CR>
