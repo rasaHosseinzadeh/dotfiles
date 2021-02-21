@@ -67,13 +67,11 @@ export LS_COLORS
 #-----------------------------
 # Ailiases
 #-----------------------------
-alias lsda="lsd -alh"
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias ls='ls --color=auto --human-readable --group-directories-first --classify'
 alias lsa='ls --color=auto --human-readable --group-directories-first --classify -la'
 alias ~="cd ~"
-alias grep=rg
 alias dots='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 #------------------------------
 # ShellFuncs
