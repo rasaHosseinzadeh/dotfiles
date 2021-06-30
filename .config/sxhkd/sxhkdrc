@@ -22,6 +22,8 @@ super + shift + h
     pcmanfm
 super + shift + w
     firefox
+super + shift + m
+    thunderbird
 super + shift + b
     brave
 
