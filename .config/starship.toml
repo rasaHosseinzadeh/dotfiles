@@ -1,0 +1,49 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+
+
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$package\
+$conda\
+$python\
+$cmd_duration\
+$status\
+$line_break\
+$character"""
+
+
+[username]
+show_always=true
+style_user = "bold blue"
+
+[hostname]
+ssh_only=false
+
+[git_status]
+staged = '[++\($count\)](green)'
+ahead = "[⇡${count}](blue)"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+conflicted = "=${count}"
+untracked = "?${count}"
+stashed = "$${count}"
+modified = "!${count}"
+renamed = "»${count}"
+deleted = "»${count}"
+
+[python]
+detect_extensions=[]
+detect_files=[]
+
+[status]
+disabled = false
+
+[character]
+error_symbol = "[✖](bold red)"
