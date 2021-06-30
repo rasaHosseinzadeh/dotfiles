@@ -1,0 +1,29 @@
+#!/bin/sh
+alias ~="cd ~"
+alias dots='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
+alias vim="nvim" vimdiff="nvim -d"
+
+# sudo not required for some system commands
+for command in mount umount sv pacman updatedb su ; do
+	alias $command="sudo $command"
+done; unset command
+
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	mkd="mkdir -pv" \
+	yt="youtube-dl --add-metadata -i" \
+	yta="yt -x -f bestaudio/best" \
+	ffmpeg="ffmpeg -hide_banner"
+
+# Colorize commands when possible.
+alias \
+	ls="ls -ahN --color=auto --group-directories-first --classify" \
+	grep="grep --color=auto" \
+	egrep="egrep --color=auto" \
+	diff="diff --color=auto" 
+
+# These common commands are just too long! Abbreviate them.
+alias v="$EDITOR"
+
