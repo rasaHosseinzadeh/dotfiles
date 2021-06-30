@@ -1,0 +1,26 @@
+[Default Applications]
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/about=firefox.desktop
+x-scheme-handler/magnet=transmission.desktop;
+application/x-bittorrent=transmission.desktop;
+audio/mpegapplication/octet-stream=mpv.desktop
+video/mp4=mpv.desktop;
+video/x-matroska=mpv.desktop
+audio/mp3=mpv.desktop
+application/pdf=zathura.desktop
+application/epub=zathura.desktop;
+application/postscript=zathura.desktop;
+image/png=sxiv.desktop;
+image/jpeg=sxiv.desktop;
+image/gif=sxiv.desktop;
+text/html=nvim.desktop
+application/pgp-keys=nvim.desktop;
+text/markdown=nvim.desktop;
+text/plain=nvim.desktop
+text/x-shellscript=nvim.desktop;
+text/plain=nvim.desktop;
+text/csv=nvim.desktop
+application/x-keepass2=keepass.desktop
+inode/directory=nnn.desktop
+x-scheme-handler/tg=telegram.desktop;
