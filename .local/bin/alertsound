@@ -1,0 +1,3 @@
+!/bin/sh
+
+paplay $XDG_DATA_HOME/alert/bell.wav

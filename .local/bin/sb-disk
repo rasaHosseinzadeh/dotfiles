@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Status bar module for disk space
+# $1 should be drive mountpoint, otherwise assumed /.
+
+location=${1:-/home/rasa}
+[ -d "$location" ] || exit
+icon="🖴"
+free=$(df -h ~ | tail -n1 | cut -d' ' -f8)
+printf "\03 [%s %3siB]\n" "$icon" "$free"

@@ -1,0 +1,9 @@
+options=$(ls $XDG_DATA_HOME/notes)
+sel=$(echo $options "new"|tr ' ' '\n' | fzf --reverse)
+if [ $sel == "new" ]
+then
+    echo "Give a name for the note."
+    read name
+    sel=$name
+fi
+vim $XDG_DATA_HOME/notes/$sel

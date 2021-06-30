@@ -1,0 +1,9 @@
+#!/bin/sh
+
+backlight_dir="/sys/class/backlight/"
+vendor_backlight_dir=${backlight_dir}$(ls ${backlight_dir} | head -n1)"/"
+max_brightness=$(cat ${vendor_backlight_dir}max_brightness)
+actual_brightness=$(cat ${vendor_backlight_dir}actual_brightness)
+perc=$((100 *  ${actual_brightness}  /  ${max_brightness}))
+icon=""
+printf "\04 [%1s %3d%%]\n" "$icon" "$perc"

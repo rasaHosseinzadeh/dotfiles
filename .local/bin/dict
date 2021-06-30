@@ -1,0 +1,4 @@
+#!/bin/sh
+
+choose=$(aspell -d en dump master | fzf --reverse)
+sdcv $choose | less
