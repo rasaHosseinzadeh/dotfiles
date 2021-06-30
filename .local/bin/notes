@@ -1,3 +1,4 @@
+mkdir -p $XDG_DATA_HOME/notes #make sure directory exists
 options=$(ls $XDG_DATA_HOME/notes)
 sel=$(echo $options "new"|tr ' ' '\n' | fzf --reverse)
 if [ $sel == "new" ]
