@@ -1,134 +1,94 @@
-# Vim like keybindings
-bindkey -v
-# Arrow keys to search only the matching
-# create a zkbd compatible hash;
-# to add other keys to this hash, see: man 5 terminfo
-typeset -g -A key
-
-key[Home]="${terminfo[khome]}"
-key[End]="${terminfo[kend]}"
-key[Insert]="${terminfo[kich1]}"
-key[Backspace]="${terminfo[kbs]}"
-key[Delete]="${terminfo[kdch1]}"
-key[Up]="${terminfo[kcuu1]}"
-key[Down]="${terminfo[kcud1]}"
-key[Left]="${terminfo[kcub1]}"
-key[Right]="${terminfo[kcuf1]}"
-key[PageUp]="${terminfo[kpp]}"
-key[PageDown]="${terminfo[knp]}"
-key[Shift-Tab]="${terminfo[kcbt]}"
-
-# Finally, make sure the terminal is in application mode, when zle is
-# active. Only then are the values from $terminfo valid.
-if (true||( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
-	autoload -Uz add-zle-hook-widget
-	function zle_application_mode_start { echoti smkx }
-	function zle_application_mode_stop { echoti rmkx }
-	add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
-	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
-fi
-
-autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-
-[[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
-[[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
-
-#-----------------------------
-# Syntax highlighting
-#-----------------------------
-if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-  . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-
-#------------------------------
-# Path
-#------------------------------
-PATH=$PATH:$HOME/.local/bin/
+bindkey -v          # Vim like keybindings
+setopt autocd		# Automatically cd into typed directory.
+stty stop undef		# Disable ctrl-s to freeze terminal.
+setopt interactive_comments
 
 #------------------------------
 # History stuff
 #------------------------------
-HISTFILE=~/.config/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-
-#------------------------------
-# Variables
-#------------------------------
-export EDITOR="nvim"
-
-#-----------------------------
-# Dircolors
-#-----------------------------
-LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:';
-export LS_COLORS
-#-----------------------------
-# Ailiases
-#-----------------------------
-alias grep='grep --colour=auto'
-alias egrep='egrep --colour=auto'
-alias ls='ls --color=auto --human-readable --group-directories-first --classify'
-alias lsa='ls --color=auto --human-readable --group-directories-first --classify -la'
-alias ~="cd ~"
-alias dots='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
-#------------------------------
-# ShellFuncs
-#------------------------------
-# -- coloured manuals
-man() {
-  env \
-    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-    LESS_TERMCAP_md=$(printf "\e[1;31m") \
-    LESS_TERMCAP_me=$(printf "\e[0m") \
-    LESS_TERMCAP_se=$(printf "\e[0m") \
-    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-    LESS_TERMCAP_ue=$(printf "\e[0m") \
-    LESS_TERMCAP_us=$(printf "\e[1;32m") \
-    man "$@"
-}
+HISTSIZE=10000
+SAVEHIST=10000
+setopt HIST_IGNORE_ALL_DUPS  # do not put duplicated command into history list
+setopt HIST_SAVE_NO_DUPS  # do not save duplicated command
+setopt HIST_FIND_NO_DUPS  # Do not find duplicate command when searching
+setopt HIST_REDUCE_BLANKS  # remove unnecessary blanks
+setopt INC_APPEND_HISTORY_TIME  # append command to history file immediately after execution
+setopt EXTENDED_HISTORY  # record command start time
 
 #------------------------------
 # Comp stuff
 #------------------------------
-zmodload zsh/complist 
 autoload -Uz compinit
-compinit
-zstyle :compinstall filename '${HOME}/.zshrc'
-
-zstyle ':completion:*:pacman:*' force-list always
-zstyle ':completion:*:*:pacman:*' menu yes select
-
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-
-zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:kill:*'   force-list always
-
-zstyle ':completion:*:*:killall:*' menu yes select
-zstyle ':completion:*:killall:*'   force-list always
-
+zmodload zsh/complist
 # The following lines were added by compinstall
-
+zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' matcher-list ''
-zstyle ':completion:*' menu select=1
+zstyle ':completion:*' menu select
 zstyle :compinstall filename "$HOME/.config//.zshrc"
+#End of added
 
-autoload -Uz compinit
-compinit
+mkdir -p "$XDG_CACHE_HOME/zsh"
+compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+_comp_options+=(globdots)		# Include hidden files.
 
 
 #------------------------------
-# Prompt
+# Make arrows go through matching
+# entries in history
 #------------------------------
-source ~/.config/zsh/git-prompt.zsh
-source ~/.config/zsh/prompt.zsh
-
+typeset -g -A key
+autoload -Uz add-zle-hook-widget
+function zle_application_mode_start { echoti smkx }
+function zle_application_mode_stop { echoti rmkx }
+add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
+add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+key[Up]="${terminfo[kcuu1]}"
+key[Down]="${terminfo[kcud1]}"
+bindkey -- "${key[Up]}"   up-line-or-beginning-search
+bindkey -- "${key[Down]}" down-line-or-beginning-search
 
 #------------------------------
 # Z
 #------------------------------
 _Z_DATA=$HOME/.local/share/z/.z
 source ~/.config/zsh/z.sh
+
+#------------------------------
+# starship prompt
+#------------------------------
+eval "$(starship init zsh)"
+
+#------------------------------
+# NNN
+#------------------------------
+alias nnn="nnn -eH -P r"
+
+n ()
+{
+    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+        echo "nnn is already running"
+        return
+    fi
+    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    nnn "$@"
+    if [ -f "$NNN_TMPFILE" ]; then
+            . "$NNN_TMPFILE"
+            rm -f "$NNN_TMPFILE" > /dev/null
+    fi
+}
+
+#
+#-----------------------------
+# Sources
+#-----------------------------
+source $XDG_CONFIG_HOME/zsh/aliasrc
+
+#-----------------------------
+# Syntax highlighting (Should be last)
+#-----------------------------
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2> /dev/null

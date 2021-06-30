@@ -1,3 +1,0 @@
-choose=$(aspell -d en dump master|fzf)
-wl-copy $choose
-sdcv $choose | less

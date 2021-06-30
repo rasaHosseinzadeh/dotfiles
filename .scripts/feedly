@@ -1,1 +1,0 @@
-qutebrowser -B ~/.local/share/qt-feedly/ -C ~/.config/qutebrowser/config.py

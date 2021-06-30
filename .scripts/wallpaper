@@ -1,9 +1,0 @@
-while true;
-do
-    killall swaybg;
-    img=$(ls ~/Pictures/Wallpaper/ | shuf -n1);
-    SWAY_BGDIR=~/Pictures/Wallpaper/$img;
-    swaybg -i $SWAY_BGDIR &
-    echo $SWAY_BGDIR > ~/.local/share/bgdir/bgdir
-    sleep 5m
-done

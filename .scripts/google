@@ -1,1 +1,0 @@
-qutebrowser -B ~/.local/share/qt-google/ -C ~/.config/qutebrowser/config.py
