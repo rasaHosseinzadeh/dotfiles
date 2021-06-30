@@ -17,7 +17,7 @@ super + alt + d
 
 
 super + shift + n
-    st -e nnn -e
+    st -e nnn -eH -P r
 super + shift + h
     pcmanfm
 super + shift + w
