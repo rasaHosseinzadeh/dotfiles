@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/st
+Icon=st
+Terminal=false
+Categories=System;TerminalEmulator;
+
+Name=st
+GenericName=Terminal
+Comment=Simple Suckless Terminal
+StartupWMClass=st
+Actions=New;
+
+X-Desktop-File-Install-Version=0.26
