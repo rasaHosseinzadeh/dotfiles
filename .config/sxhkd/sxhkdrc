@@ -6,8 +6,6 @@ super + alt + q
     dm-off
 super + alt + k
     dm-kill
-super + alt + w
-    wifi-gui
 super + alt + s
     scrot
 super + alt + c
@@ -28,6 +26,9 @@ super + shift + b
     brave
 
 
+
+super + ctrl + w
+    connman-gtk
 super + ctrl + shift + l
     slock
 super + Return
@@ -36,10 +37,11 @@ super + space
     dmenu_run -i -l 10
 super + n
     dunsthist
-
-
 XF86PowerOff
     /bin/sh -c slock
+
+
+
 XF86Audio{Prev,Next}
 	mpc -q {prev,next}
 XF86AudioPlay

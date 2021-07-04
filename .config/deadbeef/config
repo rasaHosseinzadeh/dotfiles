@@ -26,7 +26,7 @@ gtkui.action_separators 1
 gtkui.autoresize_columns 1
 gtkui.color.bar_foreground 7453 41377 62194
 gtkui.color.tabstrip_playing_text 47802 48573 46774
-gtkui.columns.playlist [{"title":"#","id":"-1","format":"%tracknumber%","sort_format":"","size":"87","align":"0","color_override":"0","color":"#ffffffff"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"517","align":"0","color_override":"0","color":"#ff000000"},{"title":"Album","id":"-1","format":"%album%","sort_format":"","size":"632","align":"0","color_override":"0","color":"#ffffffff"},{"title":"Year","id":"-1","format":"%year%","sort_format":"","size":"185","align":"0","color_override":"0","color":"#ffffffff"},{"title":"Artist","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)","sort_format":"","size":"1082","align":"0","color_override":"0","color":"#ffffffff"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"192","align":"0","color_override":"0","color":"#ff000000"}]
+gtkui.columns.playlist [{"title":"#","id":"-1","format":"%tracknumber%","sort_format":"","size":"87","align":"0","color_override":"0","color":"#ffffffff"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"519","align":"0","color_override":"0","color":"#ff000000"},{"title":"Album","id":"-1","format":"%album%","sort_format":"","size":"635","align":"0","color_override":"0","color":"#ffffffff"},{"title":"Year","id":"-1","format":"%year%","sort_format":"","size":"186","align":"0","color_override":"0","color":"#ffffffff"},{"title":"Artist","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)","sort_format":"","size":"1087","align":"0","color_override":"0","color":"#ffffffff"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"193","align":"0","color_override":"0","color":"#ff000000"}]
 gtkui.custom_tray_icon deadbeef_tray_icon
 gtkui.delete_files_ask 1
 gtkui.disable_seekbar_overlay 0
@@ -119,12 +119,12 @@ playlist.tab.00001 Default
 playlist.tab.00002 Turk
 prefwin.geometry.h 523
 prefwin.geometry.w 686
-prefwin.geometry.x 616
-prefwin.geometry.y 277
+prefwin.geometry.x 615
+prefwin.geometry.y 276
 resume.paused 0
-resume.playlist 0
-resume.position 29.768098
-resume.track 815
+resume.playlist -1
+resume.position -1.000000
+resume.track -1
 sndfile.extensions wav;aif;aiff;snd;au;paf;svx;nist;voc;ircam;w64;mat4;mat5;pvf;xi;htk;sds;avr;wavex;sd2;caf;wve
 streamer.16_to_24 1
 streamer.samplerate 44100

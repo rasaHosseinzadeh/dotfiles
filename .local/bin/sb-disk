@@ -6,5 +6,5 @@
 location=${1:-/home/rasa}
 [ -d "$location" ] || exit
 icon="🖴"
-free=$(df -h ~ | tail -n1 | cut -d' ' -f8)
+free=$(df -h ~ | tail -n1 | cut -d' ' -f7)
 printf "\03 [%s %3siB]\n" "$icon" "$free"
