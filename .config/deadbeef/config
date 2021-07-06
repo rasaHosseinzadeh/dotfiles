@@ -16,17 +16,18 @@ artwork.missing_artwork 0
 artwork.nocover_path 
 artwork.scale_towards_longer 1
 cli_add_playlist_name Default
-deadbeef_version 1.8.4
+deadbeef_version 1.8.7
 ffmpeg.enable_all_exts 1
 ffmpeg.extensions aa3;oma;ac3;vqf;amr;tak;dsf;dff;wma;3gp;mp4;m4a
-filechooser.lastdir file:///home/rasa/Music
+filechooser.lastdir file:///home/rasa
+filechooser.playlist.lastdir file:///home/rasa/downloads
 flac.ignore_bad_header_errors 0
 flac.ignore_unparsable_stream_errors 0
 gtkui.action_separators 1
 gtkui.autoresize_columns 1
 gtkui.color.bar_foreground 7453 41377 62194
 gtkui.color.tabstrip_playing_text 47802 48573 46774
-gtkui.columns.playlist [{"title":"#","id":"-1","format":"%tracknumber%","sort_format":"","size":"87","align":"0","color_override":"0","color":"#ffffffff"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"519","align":"0","color_override":"0","color":"#ff000000"},{"title":"Album","id":"-1","format":"%album%","sort_format":"","size":"635","align":"0","color_override":"0","color":"#ffffffff"},{"title":"Year","id":"-1","format":"%year%","sort_format":"","size":"186","align":"0","color_override":"0","color":"#ffffffff"},{"title":"Artist","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)","sort_format":"","size":"1087","align":"0","color_override":"0","color":"#ffffffff"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"193","align":"0","color_override":"0","color":"#ff000000"}]
+gtkui.columns.playlist [{"title":"#","id":"-1","format":"%tracknumber%","sort_format":"","size":"48","align":"0","color_override":"0","color":"#ffffffff"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"284","align":"0","color_override":"0","color":"#ff000000"},{"title":"Album","id":"-1","format":"%album%","sort_format":"","size":"348","align":"0","color_override":"0","color":"#ffffffff"},{"title":"Year","id":"-1","format":"%year%","sort_format":"","size":"102","align":"0","color_override":"0","color":"#ffffffff"},{"title":"Artist","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)","sort_format":"","size":"596","align":"0","color_override":"0","color":"#ffffffff"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"105","align":"0","color_override":"0","color":"#ff000000"}]
 gtkui.custom_tray_icon deadbeef_tray_icon
 gtkui.delete_files_ask 1
 gtkui.disable_seekbar_overlay 0
@@ -38,7 +39,7 @@ gtkui.font.listview_group_text Hack Nerd Font Mono 11
 gtkui.font.listview_text Hack Nerd Font Mono 11
 gtkui.font.tabstrip_text Hack Nerd Font Mono 11
 gtkui.italic_selected_tracks 1
-gtkui.layout.0.6.2 vbox expand="0 1" fill="1 1" homogeneous=0 {hbox expand="0 1 0" fill="1 1 1" homogeneous=0 {playtb {} seekbar {} volumebar {} } vsplitter locked=0 ratio=0.440377 pos=0 size2=0 {hsplitter locked=0 ratio=0.224192 pos=0 size2=0 {coverart {} selproperties {} } tabbed_playlist hideheaders=0 width=1920 {} } } 
+gtkui.layout.0.6.2 vbox expand="0 1" fill="1 1" homogeneous=0 {hbox expand="0 1 0" fill="1 1 1" homogeneous=0 {playtb {} seekbar {} volumebar {} } vsplitter locked=0 ratio=0.440377 pos=0 size2=0 {hsplitter locked=0 ratio=0.224192 pos=0 size2=0 {coverart {} selproperties {} } tabbed_playlist hideheaders=0 width=1040 {} } } 
 gtkui.override_bar_colors 1
 gtkui.override_listview_colors 1
 gtkui.override_tabstrip_colors 1
@@ -104,27 +105,27 @@ mp3.write_id3v2 1
 network.proxy.port 8080
 output_plugin pulseaudio
 playback.loop 0
-playback.order 1
+playback.order 2
 playback.volume 0.0000000
 playlist.current 0
-playlist.cursor.0 815
+playlist.cursor.0 2482
 playlist.cursor.1 -1
 playlist.cursor.2 0
-playlist.scroll.0 18514
+playlist.scroll.0 56855
 playlist.scroll.1 0
 playlist.scroll.2 0
 playlist.scroll.cursorfollowplayback 1
-playlist.tab.00000 Music
+playlist.tab.00000 music
 playlist.tab.00001 Default
 playlist.tab.00002 Turk
-prefwin.geometry.h 523
+prefwin.geometry.h 538
 prefwin.geometry.w 686
 prefwin.geometry.x 615
-prefwin.geometry.y 276
+prefwin.geometry.y 269
 resume.paused 0
-resume.playlist -1
-resume.position -1.000000
-resume.track -1
+resume.playlist 0
+resume.position 0.0464399
+resume.track 1115
 sndfile.extensions wav;aif;aiff;snd;au;paf;svx;nist;voc;ircam;w64;mat4;mat5;pvf;xi;htk;sds;avr;wavex;sd2;caf;wve
 streamer.16_to_24 1
 streamer.samplerate 44100

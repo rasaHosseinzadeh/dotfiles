@@ -1,7 +1,7 @@
 [Default Applications]
-x-scheme-handler/http=firefox.desktop
-x-scheme-handler/https=firefox.desktop
-x-scheme-handler/about=firefox.desktop
+x-scheme-handler/http=brave.desktop
+x-scheme-handler/https=brave.desktop
+x-scheme-handler/about=brave.desktop
 x-scheme-handler/magnet=transmission.desktop;
 application/x-bittorrent=transmission.desktop;
 audio/mpegapplication/octet-stream=mpv.desktop

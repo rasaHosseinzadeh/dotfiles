@@ -6,13 +6,13 @@ ping -q -c 1 example.org > /dev/null || exit
 
 notify-send "📦 Repository Sync" "Checking for package updates..."
 
-yay -Syyuw --noconfirm || notify-send "Error downloading updates.
+sudo -A yay -Syyuw --noconfirm || notify-send "Error downloading updates.
 
 Check your internet connection, if pacman is already running, or run update manually to see errors."
 
 if yay -Qu | grep -v "\[ignored\]"
 then
-	notify-send "🎁 Repository Sync" "Updates available. Click statusbar icon (📦) for update."
+	notify-send "🎁 Repository Sync" "Updates available."
 else
 	notify-send "📦 Repository Sync"  "Sync complete. No new packages for update."
 fi
