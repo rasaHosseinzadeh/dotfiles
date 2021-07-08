@@ -1,1 +1,1 @@
-qutebrowser -B ~/.local/share/qt-spotify/ -C ~/.config/qutebrowser/config.py
+qutebrowser -B "${XDG_DATA_HOME}/qt-spotify/" -C "${XDG_CONFIG_HOME}/qutebrowser/config.py"

@@ -1,1 +1,1 @@
-qutebrowser -B ~/.local/share/qt-netflix/ -C ~/.config/qutebrowser/config.py
+qutebrowser -B "${XDG_DATA_HOME}/qt-netflix/" -C "${XDG_CONFIG_HOME}/qutebrowser/config.py"

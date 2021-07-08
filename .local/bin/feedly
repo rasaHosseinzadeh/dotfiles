@@ -1,1 +1,1 @@
-qutebrowser -B ~/.local/share/qt-feedly/ -C ~/.config/qutebrowser/config.py
+qutebrowser -B "${XDG_DATA_HOME}/qt-feedly/" -C "${XDG_CONFIG_HOME}/qutebrowser/config.py"
