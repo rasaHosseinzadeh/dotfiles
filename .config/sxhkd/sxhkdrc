@@ -44,6 +44,8 @@ XF86PowerOff
 
 XF86Audio{Prev,Next}
 	mpc -q {prev,next}
+shift + XF86Audio{Prev,Next}
+	mpc seek {+5,-5}
 XF86AudioPlay
     mpc toggle
 
