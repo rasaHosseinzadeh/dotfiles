@@ -29,8 +29,10 @@ settings:
     global: white
   colors.webpage.darkmode.enabled:
     global: true
+  content.notifications.enabled:
+    https://www.netflix.com: false
   downloads.location.directory:
-    global: ~/Downloads/
+    global: ~/downloads/
   statusbar.show:
     global: never
   tabs.background:
