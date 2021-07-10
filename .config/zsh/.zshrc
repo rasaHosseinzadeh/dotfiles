@@ -66,7 +66,7 @@ eval "$(starship init zsh)"
 #------------------------------
 # NNN
 #------------------------------
-alias nnn="nnn -eH -P r"
+alias nnn="nnn -eH"
 
 n ()
 {
@@ -87,7 +87,7 @@ n ()
 # Sources
 #-----------------------------
 source $XDG_CONFIG_HOME/zsh/aliasrc
-
+source $XDG_CONFIG_HOME/zsh/private
 #-----------------------------
 # Syntax highlighting (Should be last)
 #-----------------------------

@@ -27,7 +27,7 @@ export CARGO_HOME=$XDG_DATA_HOME/share/cargo
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 
 export NNN_FIFO=/tmp/nnn.fifo
-export NNN_PLUG='o:fzopen;p:preview-tui;i:imgview;z:fzz;r:rsynccp'
+export NNN_PLUG='o:fzopen;p:preview-tui;i:imgview;z:fzz'
 
 
 export BROWSER=firefox
