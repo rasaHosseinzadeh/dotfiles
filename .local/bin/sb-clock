@@ -1,4 +1,4 @@
 #!/bin/sh
 
-text=$(date "+%a %b %d  %H:%M")
+text=$(date "+%a %b %d %H:%M")
 printf "\04[%s]\01\n" "$text"

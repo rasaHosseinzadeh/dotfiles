@@ -13,4 +13,4 @@ fi
 
 pamixer --get-mute | grep -q "true" && icon="🔇"
 
-printf "\03 [%1s %3d%%]\n" $icon $vol
+printf "\03 [%1s%3d%%]\n" $icon $vol

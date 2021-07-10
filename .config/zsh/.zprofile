@@ -11,4 +11,4 @@ export QT_QPA_PLATFORMTHEME="gtk2"	# Have QT use gtk2 theme.
 export MOZ_USE_XINPUT2="1"		# Mozilla smooth scrolling/touchpads.
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 
-[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx
+[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && sx sh "${XDG_CONFIG_HOME}/X11/.xinitrc"
