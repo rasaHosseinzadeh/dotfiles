@@ -1,0 +1,6 @@
+# Change defualt shell to dash
+ln -sfT dash /usr/bin/sh
+# Set ufw
+# Enable service
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
