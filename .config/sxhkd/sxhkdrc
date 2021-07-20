@@ -29,6 +29,16 @@ super + shift + b
 
 super + ctrl + w
     connman-gtk
+super + ctrl + n
+    st -n spnotes -g 120x34 -e notes
+super + ctrl + m
+    st -n spmusic -g 120x34 -e ncmpcpp
+super + ctrl + v
+    pavucontrol
+super + ctrl + p
+    keepassxc
+
+
 super + ctrl + shift + l
     slock
 super + Return
@@ -56,6 +66,6 @@ XF86AudioRaiseVolume
 XF86AudioLowerVolume
     pactl set-sink-volume @DEFAULT_SINK@ -5%; kill -51 $(pidof dwmblocks)
 XF86MonBrightnessUp
-    backlight_control +5; kill -50 $(pidof dwmblocks)
+    xbacklight -inc 5; kill -50 $(pidof dwmblocks)
 XF86MonBrightnessDown
-    backlight_control -5; kill -50 $(pidof dwmblocks)
+    xbacklight -dec 5; kill -50 $(pidof dwmblocks)

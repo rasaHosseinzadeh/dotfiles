@@ -30,7 +30,7 @@ export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='o:fzopen;p:preview-tui;i:imgview;z:fzz'
 
 
-export BROWSER=firefox
+export BROWSER=brave
 export TERMINAL=st
 export EDITOR=nvim
 export VISUAL=nvim
