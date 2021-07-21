@@ -29,6 +29,10 @@ export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='o:fzopen;p:preview-tui;i:imgview;z:fzz'
 
+export TEXMFHOME=$XDG_DATA_HOME/texmf
+export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
+export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
+
 
 export BROWSER=brave
 export TERMINAL=st
