@@ -1,0 +1,7 @@
+#!/bin/sh
+
+artist=$(mediainfo "${1}" | grep Album/Performer | cut -d: -f2 | sed 's/^ //g')
+album=$(mediainfo "${1}" | grep Album| head -1 | cut -d: -f2 | sed 's/^ //g')
+dir="${HOME}/music/${artist}/${album}"
+mkdir -p "${dir}"
+mv -v "${1}" "${dir}"
