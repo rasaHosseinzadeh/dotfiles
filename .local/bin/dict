@@ -1,4 +1,6 @@
 #!/bin/sh
 
-choose=$(aspell -d en dump master | fzf --reverse)
-sdcv $choose | less
+choose=$(aspell -d en dump master | fzf --reverse -i | tail -1)
+sdcv -n --utf8-output --color $choose 2>&1 | \
+fold --width=$(tput cols) | \
+less -RX
