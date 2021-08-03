@@ -94,7 +94,6 @@ xf86-video-intel
 xorg-server
 xorg-xbacklight
 xorg-xdpyinfo
-xorg-xinit
 xorg-xkill
 xorg-xprop
 xorg-xrandr
