@@ -1,26 +1,28 @@
-https://jalammar.github.io/feed.xml
-http://www.datagenetics.com/feed/rss.xml
-http://windowsontheory.org/feed
-http://almostsure.wordpress.com/feed
-http://www.johndcook.com/blog/feed
-http://www.goodmath.org/blog/?feed=rss2
-http://www.quantamagazine.org/feed
-http://terrytao.wordpress.com/feed
-http://karpathy.github.io/feed.xml
-http://distill.pub/rss.xml
-http://blog.stephenwolfram.com/feed
-https://ergodicityeconomics.com/feed
-http://blog.computationalcomplexity.org/feeds/posts/default
-https://nisheethvishnoi.wordpress.com/feed
-https://francisbach.com/feed
-http://www.offconvex.org/feed.xml
-https://www.math3ma.com/blog/rss.xml
-https://lukesmith.xyz/rss.xml
-https://lukesmith.xyz/videos
-https://odysee.com/$/rss/@Luke/70
-https://notrelated.xyz/rss
-https://www.scottaaronson.com/blog/?feed=rss2
-https://blog.kowalczyk.info/atom.xml
-https://vitalik.ca/feed.xml
-https://www.netmeister.org/blog/rss.xml
-https://briancallahan.net/blog/feed.xml
+https://jalammar.github.io/feed.xml ML
+http://www.datagenetics.com/feed/rss.xml Stat
+http://windowsontheory.org/feed CS
+http://almostsure.wordpress.com/feed  Stat
+http://www.johndcook.com/blog/feed Math
+http://www.goodmath.org/blog/?feed=rss2 Math
+http://www.quantamagazine.org/feed Math CS Sci
+http://terrytao.wordpress.com/feed Math "~Terry Tao"
+http://karpathy.github.io/feed.xml ML "~Andrej Karpathy"
+http://distill.pub/rss.xml Math CS ML
+http://blog.stephenwolfram.com/feed Math
+https://ergodicityeconomics.com/feed Stat
+http://blog.computationalcomplexity.org/feeds/posts/default CS
+https://nisheethvishnoi.wordpress.com/feed CS
+https://francisbach.com/feed ML
+http://www.offconvex.org/feed.xml ML Stat
+https://www.math3ma.com/blog/rss.xml Math
+https://lukesmith.xyz/rss.xml Tech
+https://lukesmith.xyz/videos Tech
+https://odysee.com/$/rss/@Luke/70 Tech
+https://notrelated.xyz/rss Tech
+https://www.scottaaronson.com/blog/?feed=rss2 CS
+https://blog.kowalczyk.info/atom.xml Tech
+https://vitalik.ca/feed.xml Tech
+https://www.netmeister.org/blog/rss.xml Tech
+https://briancallahan.net/blog/feed.xml Tech
+https://yurichev.com/news/rss.xml Tech
+https://gilkalai.wordpress.com/feed/ CS
