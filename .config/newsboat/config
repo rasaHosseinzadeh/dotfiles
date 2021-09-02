@@ -3,8 +3,8 @@ auto-reload yes
 reload-threads 100
 # ,+y opens link in mpv
 macro y set browser "mpv %u" ; open-in-browser ; set browser "elinks %u"
-show-read-feeds no
-show-read-articles no
+show-read-feeds yes
+show-read-articles yes
 refresh-on-startup yes
 
 show-keymap-hint false 
