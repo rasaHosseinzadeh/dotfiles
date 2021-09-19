@@ -67,6 +67,7 @@ set hidden                          "Change buffer without writing
 set showmatch                       "Show matching brackets.
 set linebreak
 set visualbell
+set ignorecase
 set smartcase
 set cursorline                      "Highlight the current line
 set spell                           "Spell Checker
