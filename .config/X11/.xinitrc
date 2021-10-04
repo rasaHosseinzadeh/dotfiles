@@ -4,7 +4,7 @@ mpd &
 dunst &
 xcompmgr &
 dwmblocks &
-play-with-mpv
+play-with-mpv &
 xset r rate 300 50 &
 sxhkd &
 xbacklight -set 25 &
