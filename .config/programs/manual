@@ -4,3 +4,7 @@ ln -sfT dash /usr/bin/sh
 # Enable service
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
+# Install sx
+cd /tmp
+git clone https://github.com/Earnestly/sx.git
+make PREFIX=/usr install

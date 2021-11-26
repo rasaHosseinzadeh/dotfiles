@@ -5,7 +5,6 @@ axel
 bat
 chromium
 cmatrix
-connman-gtk
 cronie
 cups
 cups-pdf
@@ -19,7 +18,7 @@ fd
 ffmpeg
 ffmpegthumbnailer
 file
-findutuls
+findutils
 firefox
 fzf
 gawk
