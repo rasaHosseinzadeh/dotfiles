@@ -2,11 +2,11 @@
 
 cmds="\
 🔒 lock,slock
-📺 display off,xset dpms force off
+ display off,xset dpms force off
 ← leave dwm,kill -9 $(pgrep -u $USER dwm$)
-🔃 reboot,sudo -A reboot
-Z suspend,loginctl suspend
-⏼ shutdown,sudo -A shutdown -h now"
+ﰇ reboot,sudo -A reboot
+⏾ suspend,loginctl suspend
+ shutdown,sudo -A shutdown -h now"
 
 choice="$(echo "$cmds" | cut -d',' -f 1 | dmenu -i -fn "Hack:size=20" -l 10)" || exit 1
 
