@@ -4,13 +4,13 @@
 
 vol=$(pamixer --get-volume)
 if [ "$vol" -gt "70" ]; then
-	icon="🔊"
+	icon="墳"
 elif [ "$vol" -lt "30" ]; then
-	icon="🔈"
+	icon="奄"
 else
-	icon="🔉"
+	icon="奔"
 fi
 
-pamixer --get-mute | grep -q "true" && icon="🔇"
+pamixer --get-mute | grep -q "true" && icon="ﱝ"
 
 printf "\03 [%1s%3d%%]\n" $icon $vol
