@@ -15,8 +15,23 @@ for battery in /sys/class/power_supply/BAT?*; do
 		"Unknown") status="♻️" ;;
 	esac
 	capacity=$(cat "$battery/capacity")
-	# Will make a warn variable if discharging and low
-	[ "$status" = "" ] && [ "$capacity" -le 25 ] && warn="!"
+
+	[ "$status" = "" ] && [ "$capacity" -le 100 ] && [ "$capacity" -ge 90 ] && status=""
+	[ "$status" = "" ] && [ "$capacity" -le 90 ] && [ "$capacity" -ge 80 ] && status=""
+	[ "$status" = "" ] && [ "$capacity" -le 80 ] && [ "$capacity" -ge 60 ] && status=""
+	[ "$status" = "" ] && [ "$capacity" -le 60 ] && [ "$capacity" -ge 40 ] && status=""
+	[ "$status" = "" ] && [ "$capacity" -le 40 ] && [ "$capacity" -ge 30 ] && status=""
+	[ "$status" = "" ] && [ "$capacity" -le 30 ] && status=""
+
+	[ "$status" = "" ] && [ "$capacity" -le 100 ] && [ "$capacity" -ge 90 ] && status=""
+	[ "$status" = "" ] && [ "$capacity" -le 90 ] && [ "$capacity" -ge 80 ] && status=""
+	[ "$status" = "" ] && [ "$capacity" -le 80 ] && [ "$capacity" -ge 70 ] && status=""
+	[ "$status" = "" ] && [ "$capacity" -le 70 ] && [ "$capacity" -ge 60 ] && status=""
+	[ "$status" = "" ] && [ "$capacity" -le 60 ] && [ "$capacity" -ge 50 ] && status=""
+	[ "$status" = "" ] && [ "$capacity" -le 50 ] && [ "$capacity" -ge 40 ] && status=""
+	[ "$status" = "" ] && [ "$capacity" -le 40 ] && [ "$capacity" -ge 30 ] && status=""
+	[ "$status" = "" ] && [ "$capacity" -le 30 ] && [ "$capacity" -ge 20 ] && status=""
+	[ "$status" = "" ] && [ "$capacity" -le 20 ] && status=""
 	# Prints the info
-	printf "\03 [%s%s %2d%%]\n" "$status" "$warn" "$capacity"; unset warn
+	printf "\03 [%s %2d%%]\n" "$status" "$capacity";
 done && exit 0
