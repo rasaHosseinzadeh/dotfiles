@@ -1,6 +1,5 @@
 arandr
 arc-gtk-theme
-aspell-en
 axel
 bat
 chromium
@@ -89,7 +88,6 @@ wpa_supplicant
 xclip
 xcompmgr
 xdg-user-dirs
-xf86-video-intel
 xorg-server
 xorg-xbacklight
 xorg-xdpyinfo
