@@ -32,7 +32,7 @@ settings:
   content.notifications.enabled:
     https://www.netflix.com: false
   downloads.location.directory:
-    global: ~/downloads/
+    global: ~/Downloads/
   statusbar.show:
     global: never
   tabs.background:

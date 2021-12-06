@@ -1,0 +1,11 @@
+[Unit]
+Description=Internet Wireless Daemon (IWD)
+Before=network.target
+Wants=network.target
+
+[Service]
+ExecStartPre=/usr/bin/sleep 2
+ExecStart=/usr/lib/iwd/iwd
+
+[Install]
+Alias=multi-user.target.wants/iwd.service

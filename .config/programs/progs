@@ -9,6 +9,7 @@ cups
 cups-pdf
 dash
 dhcpcd
+dosfstools
 dialog
 dunst
 easytag
@@ -88,6 +89,7 @@ wpa_supplicant
 xclip
 xcompmgr
 xdg-user-dirs
+xdotool
 xorg-server
 xorg-xbacklight
 xorg-xdpyinfo

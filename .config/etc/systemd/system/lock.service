@@ -1,0 +1,12 @@
+[Unit]
+Description=Lock
+Before=sleep.target
+
+[Service]
+User=rasa
+Environment="DISPLAY=:1"
+Environment="XAUTHORITY=/home/rasa/.local/share/sx/xauthority"
+ExecStart=/usr/local/bin/slock
+
+[Install]
+WantedBy=sleep.target
