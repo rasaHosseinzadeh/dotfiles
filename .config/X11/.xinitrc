@@ -2,7 +2,7 @@ setbg &
 unclutter &
 mpd &
 dunst &
-picom &
+xcompmgr &
 dwmblocks &
 play-with-mpv &
 xset r rate 300 50 &
