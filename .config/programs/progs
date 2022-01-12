@@ -75,6 +75,7 @@ texlive-fontsextra
 texlive-latexextra
 texlive-science
 thunderbird
+tlp
 tmux
 tor
 transmission-gtk

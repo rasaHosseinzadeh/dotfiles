@@ -1,4 +1,4 @@
-let mapleader = "\<Space>"			"Set leader to Space
+let mapleader = "\<Space>"
 
 "Plugin
 call plug#begin()
@@ -78,6 +78,8 @@ set splitbelow splitright
 set encoding=utf-8
 
 "Key mappings
+
+nmap gf :edit <cfile><cr>
 
 "Split Moving
 noremap <C-h> <C-w>h
