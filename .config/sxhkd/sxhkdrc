@@ -66,3 +66,7 @@ XF86MonBrightnessUp
     xbacklight -inc 5; kill -50 $(pidof dwmblocks)
 XF86MonBrightnessDown
     xbacklight -dec 5; kill -50 $(pidof dwmblocks)
+shift + XF86MonBrightnessUp
+    xbacklight -inc 1; kill -50 $(pidof dwmblocks)
+shift + XF86MonBrightnessDown
+    xbacklight -dec 1; kill -50 $(pidof dwmblocks)
