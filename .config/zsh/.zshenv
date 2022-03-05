@@ -33,6 +33,8 @@ export TEXMFHOME=$XDG_DATA_HOME/texmf
 export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
 export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 
+export TIMEWARRIORDB=$XDG_CONFIG_HOME/timewarrior/
+
 
 export BROWSER=brave
 export TERMINAL=st
