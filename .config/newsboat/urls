@@ -2,7 +2,6 @@ https://jalammar.github.io/feed.xml ML
 http://www.datagenetics.com/feed/rss.xml Stat
 http://windowsontheory.org/feed CS
 http://almostsure.wordpress.com/feed  Stat
-http://www.johndcook.com/blog/feed Math
 http://www.goodmath.org/blog/?feed=rss2 Math
 http://www.quantamagazine.org/feed Math CS Sci
 http://terrytao.wordpress.com/feed Math "~Terry Tao"
@@ -10,7 +9,6 @@ http://karpathy.github.io/feed.xml ML "~Andrej Karpathy"
 http://distill.pub/rss.xml Math CS ML
 http://blog.stephenwolfram.com/feed Math
 https://ergodicityeconomics.com/feed Stat
-http://blog.computationalcomplexity.org/feeds/posts/default CS
 https://nisheethvishnoi.wordpress.com/feed CS
 https://francisbach.com/feed ML
 http://www.offconvex.org/feed.xml ML Stat
@@ -18,6 +16,7 @@ https://www.math3ma.com/blog/rss.xml Math
 https://lukesmith.xyz/rss.xml Tech
 https://lukesmith.xyz/videos Tech
 https://odysee.com/$/rss/@Luke/70 Tech
+https://landchad.net/rss.xml Tech
 https://notrelated.xyz/rss Tech
 https://www.scottaaronson.com/blog/?feed=rss2 CS
 https://blog.kowalczyk.info/atom.xml Tech
@@ -34,3 +33,9 @@ https://www.mathcounterexamples.net/feed/ Math
 https://mathwithbaddrawings.com/feed/ Math
 https://www.argmin.net/feed.xml Math
 http://fa.bianp.net/blog/feed/ Math ML
+https://unixsheikh.com/feed.rss Tech
+https://francisbach.com/feed/ Math ML
+https://levels.io/rss/ Tech
+https://tuxphones.com/rss/ Tech
+https://artixlinux.org/feed.php Tech
+https://www.archlinux.org/feeds/news/ Tech
