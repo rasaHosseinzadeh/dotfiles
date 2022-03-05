@@ -1,0 +1,43 @@
+# This is the default config of kpmenu
+# You can store it into $HOME/.config/kpmenu/config
+[general]
+# Supported: dmenu, rofi, wofi, custom
+Menu = "dmenu"
+# Supported: xsel, wl-clipboard, custom
+ClipboardTool = "xsel"
+ClipboardTimeout = 15
+NoCache = false
+CacheOneTime = false
+CacheTimeout = 60
+NoOTP = false
+
+[executable]
+# Executable of menus used to prompt actions
+#CustomPromptPassword = 
+#CustomPromptMenu = 
+#CustomPromptEntries = 
+#CustomPromptFields = 
+# Executable of clipboard commands
+#CustomClipboardCopy = 
+#CustomClipboardPaste = 
+#CustomClipboardClean = 
+
+[style]
+PasswordBackground = "black"
+TextPassword = "Password"
+TextMenu = "Select"
+TextEntry = "Entry"
+TextField = "Field"
+FormatEntry = "{Title} - {UserName}"
+#ArgsPassword =
+#ArgsMenu =
+#ArgsEntry =
+#ArgsField =
+
+[database]
+Database = "/home/rasa/documents/pass.kdbx"
+#KeyFile =
+#Password =
+FieldOrder = "Password UserName URL"
+FillOtherFields = true
+#FillBlacklist =

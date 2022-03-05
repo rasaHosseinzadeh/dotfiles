@@ -8,11 +8,10 @@ super + alt + k
     dm-kill
 super + alt + s
     scrot
-super + alt + c
-    kunst --music_dir /home/rasa/music --size 500
 super + alt + d
     st -n dict -e dict -g 120x34
-
+super + alt + p
+    kpmenu
 
 super + shift + n
     st -e nnn -eH -P r
@@ -24,7 +23,8 @@ super + shift + m
     thunderbird
 super + shift + b
     brave
-
+super + shift + p
+    keepassxc
 
 
 super + ctrl + w
@@ -35,9 +35,6 @@ super + ctrl + m
     st -n spmusic -g 120x34 -e ncmpcpp
 super + ctrl + v
     pavucontrol
-super + ctrl + p
-    keepassxc
-
 
 super + ctrl + shift + l
     slock
@@ -45,7 +42,7 @@ super + Return
     st
 super + space
     dmenu_run -i -l 10
-super + n
+super + alt + shift + n
     dunsthist
 
 
@@ -62,6 +59,10 @@ XF86AudioRaiseVolume
     pactl set-sink-volume @DEFAULT_SINK@ +5%; kill -51 $(pidof dwmblocks)
 XF86AudioLowerVolume
     pactl set-sink-volume @DEFAULT_SINK@ -5%; kill -51 $(pidof dwmblocks)
+shift + XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +1%; kill -51 $(pidof dwmblocks)
+shift + XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -1%; kill -51 $(pidof dwmblocks)
 XF86MonBrightnessUp
     xbacklight -inc 5; kill -50 $(pidof dwmblocks)
 XF86MonBrightnessDown
