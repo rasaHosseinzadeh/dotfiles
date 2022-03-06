@@ -4,7 +4,7 @@ Before=sleep.target
 
 [Service]
 User=rasa
-Environment="DISPLAY=:1"
+Environment="DISPLAY=:0"
 Environment="XAUTHORITY=/home/rasa/.local/share/sx/xauthority"
 ExecStart=/usr/local/bin/slock
 
