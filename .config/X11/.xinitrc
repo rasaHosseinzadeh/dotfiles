@@ -8,6 +8,7 @@ play-with-mpv &
 xset r rate 300 50 &
 sxhkd &
 xbacklight -set 25 &
+xuatolock -time 10 -locker "systemctl suspend" -detectsleep
 setxkbmap -option caps:escape
 # This line autostarts an instance of Pulseaudio that does not exit on idle.
 # This is "necessary" on Artix due to a current bug between PA and
