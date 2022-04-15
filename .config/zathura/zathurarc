@@ -1,4 +1,8 @@
 map K zoom in
 map J zoom out
-map i recolor
+map I recolor
 map p print
+map g goto
+
+set sandbox none
+set selection-clipboard clipboard
