@@ -9,8 +9,8 @@ cups
 cups-pdf
 dash
 dhcpcd
-dosfstools
 dialog
+dosfstools
 dunst
 easytag
 exfat-utils
@@ -25,8 +25,8 @@ gawk
 git
 glow
 gnu-free-fonts
-grub
 go
+grub
 gzip
 hplip
 htop
@@ -45,15 +45,15 @@ mpv
 ncmpcpp
 neovim
 newsboat
+nnn
 noto-fonts-cjk
 noto-fonts-emoji
-nnn
 ntfs-3g
 p7zip
 pamixer
 papirus-icon-theme
-pavucontrol
 patch
+pavucontrol
 pcmanfm-gtk3
 plocate
 powertop
