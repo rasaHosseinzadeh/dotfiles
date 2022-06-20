@@ -27,7 +27,6 @@ https://yurichev.com/news/rss.xml Tech
 https://gilkalai.wordpress.com/feed/ CS
 https://openai.com/blog/rss/ ML
 http://ai.googleblog.com/feeds/posts/default?alt=rss ML
-https://deepmind.com/blog/feed/basic/ ML "~Deep Mind"
 http://fa.bianp.net/feed/ Math ML
 https://www.mathcounterexamples.net/feed/ Math
 https://mathwithbaddrawings.com/feed/ Math
@@ -39,3 +38,7 @@ https://tuxphones.com/rss/ Tech
 https://artixlinux.org/feed.php Tech
 https://www.archlinux.org/feeds/news/ Tech
 https://danluu.com/atom.xml Tech
+https://pudding.cool/rss.xml
+https://ciechanow.ski/atom.xml
+https://geohot.github.io/blog/feed "~George Hotz"
+http://xn--rpa.cc/feed.atom "~Lexi Hale"
