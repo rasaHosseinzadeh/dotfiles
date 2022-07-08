@@ -1,7 +1,10 @@
+android-file-transfer
 arandr
 arc-gtk-theme
+aspell
 axel
 bat
+cantata
 chromium
 cmatrix
 cronie
@@ -45,6 +48,7 @@ mpv
 ncmpcpp
 neovim
 newsboat
+nmap
 nnn
 noto-fonts-cjk
 noto-fonts-emoji
@@ -57,8 +61,9 @@ pavucontrol
 pcmanfm-gtk3
 plocate
 powertop
-pulseaudio
-pulseaudio-alsa
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
 python-pip
 qutebrowser
 ripgrep
