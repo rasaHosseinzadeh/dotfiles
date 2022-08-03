@@ -36,7 +36,7 @@ export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 export TIMEWARRIORDB=$XDG_CONFIG_HOME/timewarrior/
 
 
-export BROWSER=brave
+export BROWSER=firefox
 export TERMINAL=st
 export EDITOR=nvim
 export VISUAL=nvim

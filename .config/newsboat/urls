@@ -23,8 +23,6 @@ https://blog.kowalczyk.info/atom.xml Tech
 https://vitalik.ca/feed.xml Tech
 https://www.netmeister.org/blog/rss.xml Tech
 https://briancallahan.net/blog/feed.xml Tech
-https://yurichev.com/news/rss.xml Tech
-https://gilkalai.wordpress.com/feed/ CS
 https://openai.com/blog/rss/ ML
 http://ai.googleblog.com/feeds/posts/default?alt=rss ML
 http://fa.bianp.net/feed/ Math ML
@@ -44,3 +42,4 @@ https://geohot.github.io/blog/feed "~George Hotz"
 http://xn--rpa.cc/feed.atom "~Lexi Hale"
 https://dkb.show/rss.xml
 https://github.com/arkenfox/user.js/releases.atom
+https://jbconsulting.substack.com/feed.xml
