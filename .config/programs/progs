@@ -38,6 +38,7 @@ intel-ucode
 jupyter-notebook
 keepassxc
 libnotify
+light
 maim
 man-db
 man-pages
@@ -59,11 +60,11 @@ papirus-icon-theme
 patch
 pavucontrol
 pcmanfm-gtk3
-plocate
-powertop
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
+plocate
+powertop
 python-pip
 qutebrowser
 ripgrep
@@ -98,7 +99,6 @@ xcompmgr
 xdg-user-dirs
 xdotool
 xorg-server
-xorg-xbacklight
 xorg-xdpyinfo
 xorg-xkill
 xorg-xprop

@@ -19,6 +19,13 @@ export JUPYTER_CONFIG_DIR=$XDG_CONFIG_HOME/jupyter
 mkdir -p $XDG_CACHE_HOME/less
 export LESSKEY=$XDG_CONFIG_HOME/less/lesskey
 export LESSHISTFILE=$XDG_CACHE_HOME/less/history
+export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
+export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"
+export LESS_TERMCAP_me="$(printf '%b' '[0m')"
+export LESS_TERMCAP_so="$(printf '%b' '[01;44;33m')"
+export LESS_TERMCAP_se="$(printf '%b' '[0m')"
+export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
+export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 
 export PATH=$PATH:$HOME/.local/bin/
 
@@ -33,10 +40,16 @@ export TEXMFHOME=$XDG_DATA_HOME/texmf
 export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
 export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 
-export TIMEWARRIORDB=$XDG_CONFIG_HOME/timewarrior/
 
+export SUDO_ASKPASS="${HOME}/.local/bin/dm-pass"
 
-export BROWSER=firefox
+export FZF_DEFAULT_OPTS="-i  --multi --layout=reverse --height 40%"
+
+export QT_QPA_PLATFORMTHEME="gtk2"	# Have QT use gtk2 theme.
+export MOZ_USE_XINPUT2="1"		# Mozilla smooth scrolling/touchpads.
+export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
+
+export BROWSER=brave
 export TERMINAL=st
 export EDITOR=nvim
 export VISUAL=nvim

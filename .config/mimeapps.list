@@ -23,7 +23,8 @@ text/plain=nvim.desktop;
 text/csv=nvim.desktop
 application/x-keepass2=keepass.desktop
 inode/directory=nnn.desktop
-x-scheme-handler/tg=telegram.desktop;
+x-scheme-handler/tg=org.telegram.desktop.desktop
 
 [Added Associations]
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+x-scheme-handler/tg=org.telegram.desktop.desktop;
