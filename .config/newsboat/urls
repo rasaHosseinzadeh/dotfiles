@@ -1,31 +1,21 @@
-https://jalammar.github.io/feed.xml ML
-http://www.datagenetics.com/feed/rss.xml Stat
-http://windowsontheory.org/feed CS
-http://almostsure.wordpress.com/feed  Stat
-http://www.goodmath.org/blog/?feed=rss2 Math
-http://www.quantamagazine.org/feed Math CS Sci
+https://hnrss.org/newest?points=150&comments=25 "HackerNews"
+https://hnrss.org/bestcomments
 http://terrytao.wordpress.com/feed Math "~Terry Tao"
 http://karpathy.github.io/feed.xml ML "~Andrej Karpathy"
-http://distill.pub/rss.xml Math CS ML
-http://blog.stephenwolfram.com/feed Math
-https://ergodicityeconomics.com/feed Stat
-https://nisheethvishnoi.wordpress.com/feed CS
+https://geohot.github.io/blog/feed "~George Hotz"
 https://francisbach.com/feed ML
-http://www.offconvex.org/feed.xml ML Stat
-https://www.math3ma.com/blog/rss.xml Math
+http://blog.stephenwolfram.com/feed Math
+http://distill.pub/rss.xml Math CS ML
+http://www.quantamagazine.org/feed Math CS Sci
+https://github.com/arkenfox/user.js/releases.atom
 https://lukesmith.xyz/rss.xml Tech
 https://lukesmith.xyz/videos Tech
 https://odysee.com/$/rss/@Luke/70 Tech
 https://landchad.net/rss.xml Tech
 https://notrelated.xyz/rss Tech
-https://www.scottaaronson.com/blog/?feed=rss2 CS
-https://blog.kowalczyk.info/atom.xml Tech
 https://vitalik.ca/feed.xml Tech
-https://www.netmeister.org/blog/rss.xml Tech
-https://briancallahan.net/blog/feed.xml Tech
 https://openai.com/blog/rss/ ML
 http://ai.googleblog.com/feeds/posts/default?alt=rss ML
-http://fa.bianp.net/feed/ Math ML
 https://www.mathcounterexamples.net/feed/ Math
 https://mathwithbaddrawings.com/feed/ Math
 https://www.argmin.net/feed.xml Math
@@ -38,8 +28,7 @@ https://www.archlinux.org/feeds/news/ Tech
 https://danluu.com/atom.xml Tech
 https://pudding.cool/rss.xml
 https://ciechanow.ski/atom.xml
-https://geohot.github.io/blog/feed "~George Hotz"
-http://xn--rpa.cc/feed.atom "~Lexi Hale"
 https://dkb.show/rss.xml
-https://github.com/arkenfox/user.js/releases.atom
 https://jbconsulting.substack.com/feed.xml
+https://sohl-dickstein.github.io/feed.xml
+https://sebastiancarlos.medium.com/feed

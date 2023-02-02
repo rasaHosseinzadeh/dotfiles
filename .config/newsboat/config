@@ -9,7 +9,7 @@ refresh-on-startup yes
 
 show-keymap-hint false 
 swap-title-and-hints false
-
+goto-next-feed no
 
 # VIM
 bind-key j down
