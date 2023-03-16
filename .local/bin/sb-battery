@@ -16,11 +16,11 @@ for battery in /sys/class/power_supply/BAT?*; do
 	esac
 	capacity=$(cat "$battery/capacity")
 
-	[ "$status" = "" ] && [ "$capacity" -le 100 ] && [ "$capacity" -ge 90 ] && status=""
-	[ "$status" = "" ] && [ "$capacity" -le 90 ] && [ "$capacity" -ge 80 ] && status=""
-	[ "$status" = "" ] && [ "$capacity" -le 80 ] && [ "$capacity" -ge 60 ] && status=""
-	[ "$status" = "" ] && [ "$capacity" -le 60 ] && [ "$capacity" -ge 40 ] && status=""
-	[ "$status" = "" ] && [ "$capacity" -le 40 ] && [ "$capacity" -ge 30 ] && status=""
+	[ "$status" = "" ] && [ "$capacity" -le 100 ] && [ "$capacity" -ge 90 ] && status=""
+	[ "$status" = "" ] && [ "$capacity" -le 90 ] && [ "$capacity" -ge 80 ] && status=""
+	[ "$status" = "" ] && [ "$capacity" -le 80 ] && [ "$capacity" -ge 60 ] && status=""
+	[ "$status" = "" ] && [ "$capacity" -le 60 ] && [ "$capacity" -ge 40 ] && status=""
+	[ "$status" = "" ] && [ "$capacity" -le 40 ] && [ "$capacity" -ge 30 ] && status=""
 	[ "$status" = "" ] && [ "$capacity" -le 30 ] && status=""
 
 	[ "$status" = "" ] && [ "$capacity" -le 100 ] && [ "$capacity" -ge 90 ] && status=""

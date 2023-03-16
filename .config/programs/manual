@@ -8,3 +8,6 @@ sudo ufw default allow outgoing
 cd /tmp
 git clone https://github.com/Earnestly/sx.git
 make PREFIX=/usr install
+#Time sync using systemd
+timedatectl set-ntp true 
+
