@@ -59,3 +59,5 @@ export VSCODE_PORTABLE="$XDG_DATA_HOME"/vscode
 
 
 export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
+
+export MANPAGER="sh -c 'col  -bx |  bat -l man -p'"
