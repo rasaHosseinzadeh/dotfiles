@@ -1,0 +1,5 @@
+# VIM
+bind a mark-read-and-jump-to-next
+bind A mark-read-all
+bind R reload-all
+bind u mark-unread
