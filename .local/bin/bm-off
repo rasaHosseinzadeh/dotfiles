@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cmds="\
+ lock,slock
+← leave Hyprland,kill -9 $(pgrep -u $USER Hyprland$)
+ reboot,sudo -A reboot
+⏻ shutdown,sudo -A shutdown -h now"
+
+choice="$(echo "$cmds" | cut -d',' -f 1 | bemenu-custom -i -fn "Hack:size=20" -l 10)" || exit 1
+
+eval "$(echo "$cmds" | grep "^$choice" | cut -d ',' -f2-)"

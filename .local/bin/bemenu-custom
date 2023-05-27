@@ -1,0 +1,2 @@
+#!/bin/sh
+bemenu -i -l10 -c -H8 -B3 --fn "Hack Nerd Font:size=16:antialias=true:autohint=true" -M 400 --prompt "" --fb "#282a36" --ff "#d7d7d7" --nb "#282a36" --nf "#d7d7d7" --ab "#282a36" --af "#d7d7d7" --hb "#88527F" --hf "#d7d7d7" --bdr "#88527F"
