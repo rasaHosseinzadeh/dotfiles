@@ -4,6 +4,6 @@ selected=$(ps --user "$(id -u)" -F | dmenu -i -l 20 -p "Kill:")
 [ -z ${selected} ] && exit 0
 pid=$(echo ${selected} | cut -f2 -d' ')
 name=$(echo ${selected} | cut -f11 -d' ')
-answer=$(echo  "No\nYes" | dmenu -i -l 2 -p "Kill ${name}?")
+answer=$(echo "No\nYes" | dmenu -i -l 2 -p "Kill ${name}?")
 [ ${answer} != "Yes" ] && exit 0
 kill -9 ${pid}

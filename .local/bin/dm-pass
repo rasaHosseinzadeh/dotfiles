@@ -3,4 +3,4 @@
 # This script is the SUDO_ASKPASS variable, meaning that it will be used as a
 # password prompt if needed.
 
-dmenu -l 1  -P -p "$1" <&-
+dmenu -l 1 -P -p "$1" <&-

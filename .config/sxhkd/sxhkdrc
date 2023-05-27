@@ -10,8 +10,6 @@ super + alt + s
     scrot
 super + alt + d
     st -n dict -e dict -g 120x34
-super + alt + p
-    kpmenu
 
 super + shift + n
     st -e nnn -eH -P r
