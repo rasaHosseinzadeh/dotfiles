@@ -11,9 +11,9 @@ audio/mp3=mpv.desktop
 application/pdf=zathura.desktop
 application/epub=zathura.desktop;
 application/postscript=zathura.desktop;
-image/png=sxiv.desktop;
-image/jpeg=sxiv.desktop;
-image/gif=sxiv.desktop;
+image/png=imv.desktop;
+image/jpeg=imv.desktop;
+image/gif=mpv.desktop
 text/html=nvim.desktop
 application/pgp-keys=nvim.desktop;
 text/markdown=nvim.desktop;
@@ -28,3 +28,4 @@ x-scheme-handler/tg=org.telegram.desktop.desktop
 [Added Associations]
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
 x-scheme-handler/tg=org.telegram.desktop.desktop;
+image/gif=mpv.desktop;
