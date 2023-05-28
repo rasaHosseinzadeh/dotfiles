@@ -39,9 +39,6 @@ export TEXMFHOME=$XDG_DATA_HOME/texmf
 export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
 export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 
-
-export SUDO_ASKPASS="${HOME}/.local/bin/dm-pass"
-
 export FZF_DEFAULT_OPTS="-i  --multi --layout=reverse --height 40%"
 
 export QT_QPA_PLATFORMTHEME="gtk2"	# Have QT use gtk2 theme.
