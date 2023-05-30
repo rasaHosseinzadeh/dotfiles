@@ -15,6 +15,7 @@ window#waybar {
 #custom-cpu,
 #custom-nettraf,
 #idle_inhibitor,
+#custom-clock,
 #language {
     color: #9F87AF;
 }
@@ -23,8 +24,7 @@ window#waybar {
 #custom-memory,
 #custom-internet,
 #idle_inhibitor,
-#custom-vol,
-#custom-clock {
+#custom-vol {
     color: #B1DDF1;
 }
 
