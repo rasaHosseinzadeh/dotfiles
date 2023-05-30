@@ -1,5 +1,7 @@
 #!/bin/sh
 
+color=""
+[ -z "$1" ] && color="\03"
 vol=$(pamixer --get-volume)
 if [ "$vol" -gt "70" ]; then
 	icon=""
@@ -11,4 +13,4 @@ fi
 
 pamixer --get-mute | grep -q "true" && icon="󰸈"
 
-printf "\03 [%1s%3d%%]\n" $icon $vol
+printf "${color} [%1s%3d%%]\n" $icon $vol

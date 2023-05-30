@@ -1,5 +1,7 @@
 #!/bin/sh
 
+color=""
+[ -z "$1" ] && color="\03"
 icon="󰍛"
 text=$(free --mebi | sed -n '2{p;q}' | awk '{printf ("%3.2fGiB\n", ( $3 / 1024))}')
-printf "\03 [%1s %5s]\n" $icon $text
+printf "${color} [%1s %5s]\n" $icon $text

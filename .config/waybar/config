@@ -1,14 +1,15 @@
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 23, // Waybar height (to be removed for auto height)
+    "layer": "top",
+    "position": "top",
+    "height": 25,
     "modules-left": ["wlr/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": [ "idle_inhibitor", "pulseaudio", "network", "cpu",
-                       "memory", "temperature", "backlight", "battery", "hyprland/language"],
-    // Modules configuration
+    "modules-center": ["custom/clock"],
+    "modules-right": ["custom/vol", "custom/nettraf",
+                      "custom/internet", "custom/cpu", "custom/memory",
+                      "custom/temp", "custom/light", "custom/battery",
+                      "idle_inhibitor","hyprland/language"],
     "wlr/workspaces": {
-         "disable-scro//ll": true,
+         "disable-scroll": true,
          "all-outputs": false,
          "format": "{icon}",
          "sort-by-number": true,
@@ -37,84 +38,50 @@
          }
     },
     "idle_inhibitor": {
-        "format": "{icon}",
+        "format": "[{icon}]",
         "format-icons": {
             "activated": "",
             "deactivated": ""
         }
     },
-    "tray": {
-        "icon-size": 15,
-        "spacing": 15
+    "custom/cpu": {
+        "exec": "$HOME/.local/bin/sb-cpu NOCOLOR",
+        "interval": 5
     },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
+    "custom/memory":{
+        "exec": "$HOME/.local/bin/sb-memory NOCOLOR",
+        "interval": 5
     },
-    "memory": {
-        "format": "{used} GiB "
+    "custom/temp": {
+        "exec": "$HOME/.local/bin/sb-temp NOCOLOR",
+        "interval": 1
     },
-    "temperature": {
-        // "thermal-zone": 2,
-        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": [""]
+    "custom/light": {
+        "exec": "$HOME/.local/bin/sb-light NOCOLOR",
+        "interval": 1
     },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
+    "custom/battery":{
+        "exec": "$HOME/.local/bin/sb-battery NOCOLOR",
+        "interval": 5
     },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+    "custom/internet": {
+        "exec": "$HOME/.local/bin/sb-internet NOCOLOR",
+        "interval": 5
     },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} 󰈁",
-        "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "Disconnected ",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "custom/nettraf": {
+        "exec": "$HOME/.local/bin/sb-nettraf NOCOLOR",
+        "interval": 1
     },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "󰝟 {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+    "custom/vol": {
+        "exec": "$HOME/.local/bin/sb-volume NOCOLOR",
+        "interval": 1
     },
-    "clock": {
-      "interval": 60,
-      "format": "{:%a %b %d %H:%M}",
-      "max-length": 25
+    "custom/clock": {
+        "exec": "$HOME/.local/bin/sb-clock NOCOLOR",
+        "interval": 10
     },
     "hyprland/language": {
-      "format": "󰌌 {}",
+      "format": "[{}]",
       "format-en": "En",
       "format-fa": "Fa"
     }

@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # Prints all batteries, their percentage remaining and an emoji corresponding
-
+color=""
+[ -z "$1" ] && color="\03"
 # Loop through all attached batteries and format the info
 for battery in /sys/class/power_supply/BAT?*; do
 	# If non-first battery, print a space separator.
@@ -26,5 +27,5 @@ for battery in /sys/class/power_supply/BAT?*; do
 	[ "$status" = "󰁹" ] && [ "$capacity" -le 30 ] && [ "$capacity" -ge 20 ] && status="󰁼"
 	[ "$status" = "󰁹" ] && [ "$capacity" -le 20 ] && status="󰂃"
 	# Prints the info
-	printf "\03 [%s %2d%%]\n" "$status" "$capacity"
+	printf "${color} [%s %2d%%]\n" "$status" "$capacity"
 done && exit 0

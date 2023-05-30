@@ -1,4 +1,6 @@
 #!/bin/sh
 
+color=""
+[ -z "$1" ] && color="\04"
 text=$(date "+%a %b %d %H:%M")
-printf "\04[%s]\01\n" "$text"
+printf "${color} [%s] \n" "$text"

@@ -10,61 +10,42 @@ window#waybar {
     background-color: rgba(40, 42, 54, 0.9);
 }
 
-
-
-#battery,
-#temperature,
-#cpu,
-#pulseaudio,
-#clock {
+#custom-battery,
+#custom-temp,
+#custom-cpu,
+#custom-nettraf,
+#idle_inhibitor,
+#language {
     color: #9F87AF;
 }
 
-
-#backlight,
-#memory,
-#network,
-#language {
+#custom-light,
+#custom-memory,
+#custom-internet,
+#idle_inhibitor,
+#custom-vol,
+#custom-clock {
     color: #B1DDF1;
 }
 
-#backlight,
-#memory,
-#network,
-#language,
-#cpu,
-#memory,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#tray,
+#custom-light,
+#custom-clock,
+#custom-battery,
 #idle_inhibitor,
+#custom-cpu,
+#custom-memory,
+#custom-temp,
+#custom-nettraf,
+#custom-internet,
 #language {
-    padding: 0 8px;
-    margin: 0 8px;
-}
-
-#battery.critical:not(.charging) {
-    color: #f53c3c;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#temperature.critical {
-    color: #eb4d4b;
-}
-
-#idle_inhibitor {
-    color: #2d3436;
+    padding: 0 2px;
+    margin: 0 2px;
 }
 
 #workspaces button.active {
 	background: #9F87AF;
 }
+
 #workspaces button:hover {
 	background: #9F87AF;
 }
