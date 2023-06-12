@@ -25,12 +25,13 @@ gawk
 git
 gnu-free-fonts
 go
+grim
 grub
 gzip
 hplip
 htop
 imagemagick
-intel-ucode
+amd-ucode
 jupyter-notebook
 keepassxc
 light
@@ -48,7 +49,6 @@ nmap
 nnn
 noto-fonts-cjk
 noto-fonts-emoji
-ntfs-3g
 p7zip
 patch
 pavucontrol
@@ -60,6 +60,7 @@ plocate
 powertop
 python-pip
 qutebrowser
+qpwgraph
 ripgrep
 rsync
 rust
@@ -78,7 +79,6 @@ ueberzug
 ufw
 unrar
 unzip
-vulkan-intel
 wget
 wpa_supplicant
 yt-dlp

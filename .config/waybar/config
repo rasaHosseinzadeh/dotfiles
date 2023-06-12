@@ -11,6 +11,7 @@
     "wlr/workspaces": {
          "disable-scroll": true,
          "all-outputs": false,
+         "on-click":"activate",
          "format": "{icon}",
          "sort-by-number": true,
          "format-icons": {
