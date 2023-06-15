@@ -1,0 +1,16 @@
+[Unit]
+Description=Lock
+Before=sleep.target
+Before=suspend.target
+
+[Service]
+User=%i
+Type=forking
+Environment=WAYLAND_DISPLAY=wayland-1
+Environment=XDG_RUNTIME_DIR=/run/user/%i
+ExecStart=/usr/bin/swaylock
+TimeoutSec=infinity
+
+[Install]
+WantedBy=suspend.target
+WantedBy=sleep.target
