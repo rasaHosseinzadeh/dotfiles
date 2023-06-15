@@ -12,4 +12,7 @@ make PREFIX=/usr install
 timedatectl set-ntp true 
 # Add boot partition for fwupd
 echo /boot/EFI/ >> /etc/fwupd/fwupd.conf
+# Add hibernation:
+add resume to mkinitcpio.conf
+add resume=/dev/disk/by-uuid/<SWAP UUID> to /etc/defualt/grub GRUB_CMDLINE_LINUX=
 
