@@ -7,7 +7,7 @@ super + alt + q
 super + alt + k
     dm-kill
 super + alt + s
-    scrot
+    dm-scrot
 super + alt + d
     st -n dict -e dict -g 120x34
 

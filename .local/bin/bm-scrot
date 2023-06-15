@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case "$(printf "a selected area (copy)\\ncurrent window (copy)\\nfull screen (copy)\\na selected area\\ncurrent window\\nfull screen" | bemenu-custom -i -fn "Hack:size=20" -l 10 -p "Screenshot which area?")" in
+"a selected area (copy)") grim -g "$(slurp)" - | wl-copy -t image/png ;;
+"current window (copy)") grim -g "$(hyprctl -j activewindow | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')" - | wl-copy -t image/png ;;
+"full screen (copy)") grim - | wl-copy -t image/png ;;
+"a selected area") grim -g "$(slurp)" ;;
+"current window") grim -g "$(hyprctl -j activewindow | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')" ;;
+"full screen") grim ;;
+esac
