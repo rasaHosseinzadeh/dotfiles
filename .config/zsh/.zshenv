@@ -29,6 +29,8 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 export PATH=$PATH:$HOME/.local/bin/
 
 export CARGO_HOME=$XDG_DATA_HOME/share/cargo
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+
 
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 

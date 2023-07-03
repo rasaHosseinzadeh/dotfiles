@@ -24,8 +24,11 @@ text/csv=nvim.desktop
 application/x-keepass2=keepass.desktop
 inode/directory=nnn.desktop
 x-scheme-handler/tg=org.telegram.desktop.desktop
+audio/x-wav=mpv.desktop
 
 [Added Associations]
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
 x-scheme-handler/tg=org.telegram.desktop.desktop;
 image/gif=mpv.desktop;
+video/webm=mpv.desktop;
+audio/x-wav=mpv.desktop;
