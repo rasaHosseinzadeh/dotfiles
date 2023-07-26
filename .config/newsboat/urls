@@ -1,19 +1,18 @@
 https://hnrss.org/newest?points=150&comments=25 "HackerNews"
 https://hnrss.org/bestcomments
+https://akhaliq.substack.com/feed
 http://terrytao.wordpress.com/feed Math "~Terry Tao"
 http://karpathy.github.io/feed.xml ML "~Andrej Karpathy"
 https://geohot.github.io/blog/feed "~George Hotz"
 https://francisbach.com/feed ML
 http://blog.stephenwolfram.com/feed Math
 http://distill.pub/rss.xml Math CS ML
-http://www.quantamagazine.org/feed Math CS Sci
 https://github.com/arkenfox/user.js/releases.atom
 https://lukesmith.xyz/rss.xml Tech
 https://lukesmith.xyz/videos Tech
 https://odysee.com/$/rss/@Luke/70 Tech
 https://landchad.net/rss.xml Tech
 https://notrelated.xyz/rss Tech
-https://vitalik.ca/feed.xml Tech
 http://ai.googleblog.com/feeds/posts/default?alt=rss ML
 https://www.mathcounterexamples.net/feed/ Math
 https://mathwithbaddrawings.com/feed/ Math
@@ -31,3 +30,4 @@ https://jbconsulting.substack.com/feed.xml
 https://sohl-dickstein.github.io/feed.xml
 https://thegradient.pub/rss/
 https://www.lynalden.com/feed/
+https://www.evanmiller.org/news.xml
