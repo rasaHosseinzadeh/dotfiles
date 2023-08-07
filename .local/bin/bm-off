@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cmds="\
- lock,slock
+ lock,swaylock -f -c 222222
 ← leave Hyprland,kill -9 $(pgrep -u $USER Hyprland$)
  reboot,sudo -A reboot
 ⏻ shutdown,sudo -A shutdown -h now"
