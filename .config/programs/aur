@@ -1,7 +1,7 @@
 brave-bin
 chromium-widevine
-iwgtk
 dust
+iwgtk
 neovim-plug
 nerd-fonts-hack
 simple-mtpfs
@@ -10,4 +10,5 @@ slurp-git
 spotify
 tealdeer
 vazirmatn-fonts
+waybar-hyprland-git
 zsh-fast-syntax-highlighting
