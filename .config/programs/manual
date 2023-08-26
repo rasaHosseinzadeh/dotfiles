@@ -1,22 +1,37 @@
 # Change defualt shell to dash
 ln -sfT dash /usr/bin/sh
+
 # Set ufw
 # Enable service
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
+
+
 # Install sx (only for X11)
 cd /tmp
 git clone https://github.com/Earnestly/sx.git
 make PREFIX=/usr install
+
 #Time sync using systemd
-timedatectl set-ntp true 
+timedatectl set-ntp true
+
 # Add boot partition for fwupd
 echo /boot/EFI/ >> /etc/fwupd/fwupd.conf
+
 # Add hibernation:
 add resume to mkinitcpio.conf
 add resume=/dev/disk/by-uuid/<SWAP UUID> to /etc/defualt/grub GRUB_CMDLINE_LINUX=
+
 # Add powertop autotune
 systemctl enable powertop.service
+
 # Compile plugin for hyprland
 split-monitor-plugin
 
+# Copy Firefox profile and chromecss
+# Plugins: Dark reader - Multi container - sideberry - uBlock Origin
+
+# Add cron for update (use crontab -e)
+@daily export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u $USER)/bus; export DISPLAY=:0; . $HOME/.config/zsh/.zprofile; ${HOME}/.local/bin/checkup
+#With sudo crontab -e
+@reboot /usr/bin/updatedb
