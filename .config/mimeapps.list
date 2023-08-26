@@ -1,7 +1,6 @@
 [Default Applications]
-x-scheme-handler/http=brave.desktop
-x-scheme-handler/https=brave.desktop
-x-scheme-handler/about=brave.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
 x-scheme-handler/magnet=transmission.desktop;
 application/x-bittorrent=transmission.desktop;
 audio/mpegapplication/octet-stream=mpv.desktop
@@ -14,7 +13,7 @@ application/postscript=zathura.desktop;
 image/png=imv.desktop;
 image/jpeg=imv.desktop;
 image/gif=mpv.desktop
-text/html=nvim.desktop
+text/html=firefox.desktop
 application/pgp-keys=nvim.desktop;
 text/markdown=nvim.desktop;
 text/plain=nvim.desktop
@@ -25,6 +24,13 @@ application/x-keepass2=keepass.desktop
 inode/directory=nnn.desktop
 x-scheme-handler/tg=org.telegram.desktop.desktop
 audio/x-wav=mpv.desktop
+x-scheme-handler/chrome=firefox.desktop
+application/x-extension-htm=firefox.desktop
+application/x-extension-html=firefox.desktop
+application/x-extension-shtml=firefox.desktop
+application/xhtml+xml=firefox.desktop
+application/x-extension-xhtml=firefox.desktop
+application/x-extension-xht=firefox.desktop
 
 [Added Associations]
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
@@ -32,3 +38,13 @@ x-scheme-handler/tg=org.telegram.desktop.desktop;
 image/gif=mpv.desktop;
 video/webm=mpv.desktop;
 audio/x-wav=mpv.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/chrome=firefox.desktop;
+text/html=firefox.desktop;
+application/x-extension-htm=firefox.desktop;
+application/x-extension-html=firefox.desktop;
+application/x-extension-shtml=firefox.desktop;
+application/xhtml+xml=firefox.desktop;
+application/x-extension-xhtml=firefox.desktop;
+application/x-extension-xht=firefox.desktop;
