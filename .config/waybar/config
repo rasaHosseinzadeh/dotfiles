@@ -2,13 +2,13 @@
     "layer": "top",
     "position": "top",
     "height": 25,
-    "modules-left": ["wlr/workspaces"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": ["custom/clock"],
     "modules-right": ["custom/vol", "custom/nettraf",
                       "custom/internet", "custom/cpu", "custom/memory",
                       "custom/temp", "custom/light", "custom/battery",
                       "idle_inhibitor","hyprland/language"],
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
          "disable-scroll": true,
          "all-outputs": false,
          "on-click":"activate",
