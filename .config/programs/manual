@@ -38,4 +38,5 @@ split-monitor-plugin
 @reboot /usr/bin/updatedb
 
 
-# Run TLP and activate ntp
+# Run TLP
+# symlink $HOME/.zshenv to .config/zsh/.zshenv
