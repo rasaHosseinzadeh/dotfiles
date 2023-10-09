@@ -33,5 +33,9 @@ split-monitor-plugin
 
 # Add cron for update (use crontab -e)
 @daily export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u $USER)/bus; export DISPLAY=:0; . $HOME/.config/zsh/.zprofile; ${HOME}/.local/bin/checkup
+
 #With sudo crontab -e
 @reboot /usr/bin/updatedb
+
+
+# Run TLP and activate ntp

@@ -9,6 +9,7 @@ bat
 bemenu-wayland
 bluez
 bluez-utils
+brave-bin
 chromium
 cmake
 cmatrix
@@ -28,6 +29,7 @@ ffmpegthumbnailer
 file
 findutils
 firefox
+fwupd
 fzf
 gawk
 git
@@ -71,6 +73,10 @@ pipewire-pulse
 plocate
 powertop
 python-pip
+python-numpy
+python-pandas
+python-scipy
+python-seaborn
 qutebrowser
 ripgrep
 rsync
