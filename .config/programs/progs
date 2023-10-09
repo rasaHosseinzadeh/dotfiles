@@ -9,7 +9,6 @@ bat
 bemenu-wayland
 bluez
 bluez-utils
-brave-bin
 chromium
 cmake
 cmatrix
@@ -64,6 +63,7 @@ nnn
 noto-fonts-cjk
 noto-fonts-emoji
 p7zip
+pamixer
 patch
 pavucontrol
 pcmanfm-gtk3
@@ -77,6 +77,7 @@ python-numpy
 python-pandas
 python-scipy
 python-seaborn
+qt5-wayland
 qutebrowser
 ripgrep
 rsync
