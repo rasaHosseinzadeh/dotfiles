@@ -1,3 +1,5 @@
 [user]
 	email = rasa.hosseinzadeh@gmail.com
 	name = Rasa Hosseinzdaeh
+[init]
+	defaultBranch = master
