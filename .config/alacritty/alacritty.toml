@@ -40,4 +40,4 @@ mods = "Alt"
 
 [window]
 decorations = "none"
-opacity = 0.95
+opacity = 1.0
