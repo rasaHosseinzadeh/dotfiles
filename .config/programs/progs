@@ -73,9 +73,10 @@ pipewire-jack
 pipewire-pulse
 plocate
 powertop
-python-pip
+python-neovim
 python-numpy
 python-pandas
+python-pip
 python-scipy
 python-seaborn
 qt5-wayland
@@ -91,6 +92,7 @@ swayidle
 swaylock
 telegram-desktop
 texinfo
+texlive-binextra
 texlive-core
 texlive-fontsextra
 texlive-latexextra

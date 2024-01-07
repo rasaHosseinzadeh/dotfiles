@@ -20,13 +20,13 @@ mods = "Alt"
 
 [[keyboard.bindings]]
 action = "IncreaseFontSize"
-key = "K"
-mods = "Control"
+key = "L"
+mods = "Alt"
 
 [[keyboard.bindings]]
 action = "DecreaseFontSize"
-key = "J"
-mods = "Control"
+key = "H"
+mods = "Alt"
 
 [[keyboard.bindings]]
 action = "ScrollLineUp"
