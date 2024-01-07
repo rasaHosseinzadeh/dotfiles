@@ -66,8 +66,6 @@ eval "$(starship init zsh)"
 #------------------------------
 # NNN
 #------------------------------
-alias nnn="nnn -eH"
-
 n ()
 {
     if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then

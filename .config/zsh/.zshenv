@@ -6,6 +6,8 @@ export XDG_STATE_HOME="/$HOME/.local/state"
 
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 mkdir -p "$XDG_STATE_HOME"/zsh/     #Make sure directory exists
+mkdir -p "$XDG_STATE_HOME"/z/     #Make sure directory exists
+touch -a "$XDG_STATE_HOME"/z/.z     #Make sure file exists
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export GNUPGHOME=~/.local/share/gnupg
 
