@@ -21,6 +21,7 @@ dhcpcd
 dosfstools
 dunst
 easytag
+efibootmgr
 exfat-utils
 fd
 ffmpeg
