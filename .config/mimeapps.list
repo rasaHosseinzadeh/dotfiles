@@ -34,6 +34,9 @@ application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
 audio/x-opus+ogg=mpv.desktop
 video/vnd.avi=mpv.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-X35HH2.desktop
+message/rfc822=userapp-Thunderbird-X35HH2.desktop
+x-scheme-handler/mid=userapp-Thunderbird-X35HH2.desktop
 
 [Added Associations]
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
@@ -53,3 +56,5 @@ application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
 audio/x-opus+ogg=mpv.desktop;
 video/vnd.avi=mpv.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-X35HH2.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-X35HH2.desktop;

@@ -1,6 +1,7 @@
 brave-bin
 chromium-widevine
 dust
+freetube
 iwgtk
 light
 mkinitcpio-firmware
@@ -8,7 +9,6 @@ nerd-fonts-hack
 simple-mtpfs
 slack-desktop
 slurp-git
-spotify
 tealdeer
 ttf-hack-nerd
 vazirmatn-fonts
