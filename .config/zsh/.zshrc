@@ -86,6 +86,18 @@ n ()
 #-----------------------------
 source $XDG_CONFIG_HOME/zsh/aliasrc
 source $XDG_CONFIG_HOME/zsh/private
+#
+#-----------------------------
+# SSH
+#-----------------------------
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
+    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+fi
+
+eval $(keychain --eval --quiet git_ed25519 ssh_rsa --absolute --dir "$XDG_RUNTIME_DIR"/keychain)
 #-----------------------------
 # Syntax highlighting (Should be last)
 #-----------------------------
