@@ -6,15 +6,18 @@ setopt interactive_comments
 #------------------------------
 # History stuff
 #------------------------------
-HISTSIZE=10000
-SAVEHIST=10000
-setopt HIST_IGNORE_ALL_DUPS  # do not put duplicated command into history list
+HISTSIZE=50000
+SAVEHIST=50000
 setopt HIST_SAVE_NO_DUPS  # do not save duplicated command
 setopt HIST_FIND_NO_DUPS  # Do not find duplicate command when searching
 setopt HIST_REDUCE_BLANKS  # remove unnecessary blanks
-setopt INC_APPEND_HISTORY_TIME  # append command to history file immediately after execution
+setopt INC_APPEND_HISTORY # append command to history file immediately after execution
 setopt EXTENDED_HISTORY  # record command start time
-
+setopt SHARE_HISTORY # share history between sessions
+setopt HIST_EXPIRE_DUPS_FIRST # Expire duplicate entries first when trimming history:
+setopt HIST_IGNORE_DUPS # Dont record an entry that was just recorded again:
+setopt HIST_IGNORE_ALL_DUPS # Delete old recorded entry if new entry is a duplicate:
+setopt HIST_IGNORE_SPACE # Dont record an entry starting with a space:
 #------------------------------
 # Comp stuff
 #------------------------------
