@@ -18,7 +18,7 @@ alias \
 	yt="yt-dlp --add-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
 	ffmpeg="ffmpeg -hide_banner" \
-	alias nnn="nnn -eH"
+	alias nnn="nnn -edrH"
 
 # Colorize commands when possible.
 alias \
