@@ -25,14 +25,16 @@ add resume=/dev/disk/by-uuid/<SWAP UUID> to /etc/defualt/grub GRUB_CMDLINE_LINUX
 # Add powertop autotune
 and powertop service (create the systemd service using the file in config)
 # Run tlp
-systemctl enable tlp.service
+sudo systemctl enable --now tlp.service
 
-# Compile plugin for hyprland
-split-monitor-plugin
+# Add plugin for hyprland
+hyprpm add https://github.com/rasaHosseinzadeh/split-monitor-workspaces
 
 # Copy Firefox profile and chromecss
 # Plugins: Dark reader - Multi container - sideberry - uBlock Origin
 
+#Start cronie
+sudo systemctl enable --now cronie.service
 # Add cron for update (use crontab -e)
 @daily export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u $USER)/bus; export DISPLAY=:0; . $HOME/.config/zsh/.zprofile; ${HOME}/.local/bin/checkup
 
