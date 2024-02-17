@@ -3,3 +3,27 @@
 	name = Rasa Hosseinzdaeh
 [init]
 	defaultBranch = master
+[merge]
+	conflictStyle = zdiff3
+	tool = meld
+[commit]
+	verbose = true
+[help]
+	autocorrect = prompt
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false
+    line-numbers = true
+[diff]
+    colorMoved = default
+	algorithm = histogram
+[url "git@github.com:"]
+	insteadOf = "https://github.com/"
+[branch]
+	sort = -committerdate
+[push]
+	autoSetupRemote = true
