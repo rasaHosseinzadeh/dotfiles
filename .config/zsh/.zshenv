@@ -53,7 +53,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 
 export BROWSER=firefox
-export TERMINAL=st
+export TERMINAL=alacritty
 export EDITOR=nvim
 export VISUAL=nvim
 
