@@ -14,10 +14,10 @@ setopt HIST_REDUCE_BLANKS  # remove unnecessary blanks
 setopt INC_APPEND_HISTORY # append command to history file immediately after execution
 setopt EXTENDED_HISTORY  # record command start time
 setopt SHARE_HISTORY # share history between sessions
-setopt HIST_EXPIRE_DUPS_FIRST # Expire duplicate entries first when trimming history:
-setopt HIST_IGNORE_DUPS # Dont record an entry that was just recorded again:
-setopt HIST_IGNORE_ALL_DUPS # Delete old recorded entry if new entry is a duplicate:
-setopt HIST_IGNORE_SPACE # Dont record an entry starting with a space:
+setopt HIST_EXPIRE_DUPS_FIRST # Expire duplicate entries first when trimming history
+setopt HIST_IGNORE_DUPS # Dont record an entry that was just recorded again
+setopt HIST_IGNORE_ALL_DUPS # Delete old recorded entry if new entry is a duplicate
+setopt HIST_IGNORE_SPACE # Dont record an entry starting with a space
 #------------------------------
 # Comp stuff
 #------------------------------
@@ -56,10 +56,11 @@ bindkey -- "${key[Up]}"   up-line-or-beginning-search
 bindkey -- "${key[Down]}" down-line-or-beginning-search
 
 #------------------------------
-# Z
+# zoxide
 #------------------------------
-_Z_DATA=$HOME/.local/share/z/.z
-source ~/.config/zsh/z.sh
+eval "$(zoxide init zsh)"
+
+
 
 #------------------------------
 # starship prompt

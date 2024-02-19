@@ -5,9 +5,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="/$HOME/.local/state"
 
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
-mkdir -p "$XDG_STATE_HOME"/zsh/     #Make sure directory exists
-mkdir -p "$XDG_STATE_HOME"/z/     #Make sure directory exists
-touch -a "$XDG_STATE_HOME"/z/.z     #Make sure file exists
+mkdir -p "$XDG_STATE_HOME"/zsh/
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export GNUPGHOME=~/.local/share/gnupg
 
@@ -49,8 +47,6 @@ export FZF_DEFAULT_OPTS="-i  --multi --layout=reverse --height 40%"
 export QT_QPA_PLATFORMTHEME="gtk2"	# Have QT use gtk2 theme.
 export MOZ_USE_XINPUT2="1"		# Mozilla smooth scrolling/touchpads.
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
-
-export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 
 export BROWSER=firefox
 export TERMINAL=alacritty

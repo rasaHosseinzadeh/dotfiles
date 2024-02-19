@@ -1,5 +1,4 @@
 #!/bin/sh
-alias ~="cd ~"
 
 alias dots='/usr/bin/git --git-dir=$XDG_DATA_HOME/dots/ --work-tree=$HOME'
 alias vim="nvim" vimdiff="nvim -d"
@@ -17,8 +16,7 @@ alias \
 	mkd="mkdir -pv" \
 	yt="yt-dlp --add-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
-	ffmpeg="ffmpeg -hide_banner" \
-	alias nnn="nnn -edrH"
+	ffmpeg="ffmpeg -hide_banner"
 
 # Colorize commands when possible.
 alias \
