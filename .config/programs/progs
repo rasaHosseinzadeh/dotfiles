@@ -22,6 +22,7 @@ dosfstools
 dunst
 easytag
 efibootmgr
+exa
 exfat-utils
 fd
 ffmpeg
@@ -110,7 +111,6 @@ waylock
 wget
 wl-clipboard
 wpa_supplicant
-xdg-desktop-portal-hyprland
 yt-dlp
 zathura
 zathura-djvu
