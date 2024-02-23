@@ -35,7 +35,7 @@ incremental_seeking = "yes"
 seek_time = "1"
 
 ## Now Playing ##
-now_playing_prefix = "> "
+now_playing_prefix = ">"
 centered_cursor = "yes"
 
 #Other

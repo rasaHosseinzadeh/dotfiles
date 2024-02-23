@@ -68,7 +68,6 @@ p7zip
 pamixer
 patch
 pavucontrol
-pcmanfm-gtk3
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
@@ -104,6 +103,7 @@ tor
 transmission-gtk
 tree
 ufw
+unarchiver
 unrar
 unzip
 waybar
