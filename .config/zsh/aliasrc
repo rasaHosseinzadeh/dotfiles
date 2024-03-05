@@ -15,12 +15,12 @@ alias \
 	rm="rm -vI" \
 	mkd="mkdir -pv" \
 	yt="yt-dlp --add-metadata -i" \
-	yta="yt -x -f bestaudio/best" \
+	yta="yt -x -f bestaudio/best --audio-format mp3" \
 	ffmpeg="ffmpeg -hide_banner"
 
 # Colorize commands when possible.
 alias \
-	ls="exa --icons --group-directories-first -al" \
+	ls="eza --icons --group-directories-first -al" \
 	grep="grep --color=auto" \
 	egrep="egrep --color=auto" \
 	diff="diff --color=auto" \
