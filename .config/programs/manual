@@ -27,9 +27,6 @@ and powertop service (create the systemd service using the file in config)
 # Run tlp
 sudo systemctl enable --now tlp.service
 
-# Add plugin for hyprland
-hyprpm add https://github.com/rasaHosseinzadeh/split-monitor-workspaces
-
 # Copy Firefox profile and chromecss
 # Plugins: Dark reader - Multi container - sideberry - uBlock Origin
 

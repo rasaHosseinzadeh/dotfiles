@@ -1,4 +1,3 @@
-acpi
 alacritty
 amd-ucode
 android-file-transfer
@@ -12,7 +11,6 @@ bluez-utils
 chromium
 cmake
 cmatrix
-cpio
 cronie
 cups
 cups-pdf
@@ -27,7 +25,6 @@ eza
 fd
 ffmpeg
 ffmpegthumbnailer
-file
 findutils
 firefox
 fwupd
@@ -35,8 +32,6 @@ fzf
 gawk
 git
 git-delta
-gnu-free-fonts
-go
 grim
 grub
 gzip
@@ -49,7 +44,6 @@ iwd
 jupyter-notebook
 keepassxc
 lazygit
-libnotify
 maim
 man-db
 man-pages
@@ -78,14 +72,10 @@ python-numpy
 python-pandas
 python-pip
 python-scipy
-python-seaborn
 qt5-wayland
 qutebrowser
 ripgrep
 rsync
-ruff
-ruff-lsp
-rust
 starship
 swaybg
 swayidle
@@ -101,7 +91,6 @@ thunderbird
 tlp
 tor
 transmission-gtk
-tree
 ufw
 unarchiver
 unrar
