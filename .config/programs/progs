@@ -43,6 +43,7 @@ imv
 iwd
 jupyter-notebook
 keepassxc
+keychain
 lazygit
 maim
 man-db
@@ -105,5 +106,6 @@ yt-dlp
 zathura
 zathura-djvu
 zathura-pdf-mupdf
+zoxide
 zsh
 zsh-completions
