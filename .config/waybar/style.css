@@ -10,6 +10,7 @@ window#waybar {
     background-color: rgba(40, 42, 54, 1.0);
 }
 
+#privacy,
 #custom-battery,
 #custom-temp,
 #custom-cpu,
@@ -20,6 +21,7 @@ window#waybar {
     color: #9F87AF;
 }
 
+#bluetooth,
 #custom-light,
 #custom-memory,
 #custom-internet,
