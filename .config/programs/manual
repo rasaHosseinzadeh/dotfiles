@@ -6,12 +6,6 @@ ln -sfT dash /usr/bin/sh
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 
-
-# Install sx (only for X11)
-cd /tmp
-git clone https://github.com/Earnestly/sx.git
-make PREFIX=/usr install
-
 #Time sync using systemd
 timedatectl set-ntp true
 
@@ -22,13 +16,12 @@ echo /boot/EFI/ >> /etc/fwupd/fwupd.conf
 add resume to mkinitcpio.conf in HOOKs
 add resume=/dev/disk/by-uuid/<SWAP UUID> to /etc/defualt/grub GRUB_CMDLINE_LINUX=
 
-# Add powertop autotune
-add powertop service (create the systemd service using the file in config)
 # Run tlp
 sudo systemctl enable --now tlp.service
 
 # Enable fstrim for ssd
-sudo systemctl enable --now tlp.service
+sudo systemctl enable  fstrim.timer
+
 # Copy Firefox profile and chromecss
 # Plugins: Dark reader - Multi container - sideberry - uBlock Origin
 
