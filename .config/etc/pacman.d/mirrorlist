@@ -7,11 +7,11 @@
 # From:       https://archlinux.org/mirrors/status/json/
 # Retrieved:  2024-06-22 16:20:41 UTC
 # Last Check: 2024-06-22 15:41:05 UTC
-Server = https://mirror.xenyth.net/archlinux/$repo/os/$arch
-Server = https://us.mirrors.cicku.me/archlinux/$repo/os/$arch
 Server = https://mirror.zackmyers.io/archlinux/$repo/os/$arch
 Server = https://mirror.tmmworkshop.com/archlinux/$repo/os/$arch
+Server = https://mirror.xenyth.net/archlinux/$repo/os/$arch
 Server = https://mirror.quantum5.ca/archlinux/$repo/os/$arch
+Server = https://us.mirrors.cicku.me/archlinux/$repo/os/$arch
 Server = https://mirrors.iu13.net/archlinux/$repo/os/$arch
 Server = https://uvermont.mm.fcix.net/archlinux/$repo/os/$arch
 Server = https://iad.mirrors.misaka.one/archlinux/$repo/os/$arch
