@@ -36,3 +36,11 @@ sudo systemctl enable --now cronie.service
 
 # Run TLP
 # symlink $HOME/.zshenv to .config/zsh/.zshenv
+
+
+
+#Legacy
+# Install sx (only for X11)
+cd /tmp
+git clone https://github.com/Earnestly/sx.git
+make PREFIX=/usr install
