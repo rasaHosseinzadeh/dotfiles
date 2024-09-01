@@ -36,6 +36,12 @@ sudo systemctl enable --now cronie.service
 
 # Run TLP
 # symlink $HOME/.zshenv to .config/zsh/.zshenv
+# Mask the rfkill service
+sudo systemctl mask systemd-rfkill.service
+
+# Mask the rfkill socket
+sudo systemctl mask systemd-rfkill.socket
+
 
 # Start MPD
 sudo systemctl enable --now mpd.service
