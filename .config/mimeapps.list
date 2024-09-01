@@ -38,3 +38,7 @@ x-scheme-handler/magnet=transmission.desktop;
 x-scheme-handler/mailto=userapp-Thunderbird-X35HH2.desktop
 x-scheme-handler/mid=userapp-Thunderbird-X35HH2.desktop
 x-scheme-handler/tg=org.telegram.desktop.desktop;
+x-scheme-handler/tonsite=org.telegram.desktop.desktop
+
+[Added Associations]
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;
