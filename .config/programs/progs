@@ -90,6 +90,7 @@ transmission-gtk
 tree-sitter
 ufw
 waybar
+wget
 wildmidi
 wl-clipboard
 xarchiver

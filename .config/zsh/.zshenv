@@ -43,8 +43,13 @@ export TEXMFHOME=$XDG_DATA_HOME/texmf
 export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
 export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 
-export FZF_DEFAULT_COMMAND='fd . ~ /mnt/extra'
+export FZF_DEFAULT_COMMAND='fd --strip-cwd-prefix --hidden --exclude .git'
 export FZF_DEFAULT_OPTS="-i  --multi --layout=reverse --height 40%"
+export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+export FZF_ALT_C_COMMAND="${FZF_DEFAULT_COMMAND} --type=d ${FZF_DEFAULT_OPTS}"
+
 
 export QT_QPA_PLATFORMTHEME="gtk2"	# Have QT use gtk2 theme.
 export MOZ_USE_XINPUT2="1"		# Mozilla smooth scrolling/touchpads.

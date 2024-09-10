@@ -5,26 +5,26 @@ alias vim="nvim" vimdiff="nvim -d"
 
 # sudo not required for some system commands
 for command in mount umount sv pacman updatedb su; do
-	alias $command="sudo $command"
+  alias $command="sudo $command"
 done
 unset command
 
 alias \
-	cp="cp -iv" \
-	mv="mv -iv" \
-	rm="rm -vI" \
-	mkd="mkdir -pv" \
-	yt="yt-dlp --add-metadata -i" \
-	yta="yt -x -f bestaudio/best --audio-format mp3" \
-	ffmpeg="ffmpeg -hide_banner"
+  cp="cp -iv" \
+  mv="mv -iv" \
+  rm="rm -vI" \
+  mkd="mkdir -pv" \
+  yt="yt-dlp --add-metadata -i" \
+  yta="yt -x -f bestaudio/best --audio-format mp3" \
+  ffmpeg="ffmpeg -hide_banner"
 
 # Colorize commands when possible.
 alias \
-	ls="eza --icons --group-directories-first -al" \
-	grep="grep --color=auto" \
-	egrep="egrep --color=auto" \
-	diff="diff --color=auto" \
-	ip='ip --color=auto'
+  ls="eza --icons --group-directories-first --git -al" \
+  grep="grep --color=auto" \
+  egrep="egrep --color=auto" \
+  diff="diff --color=auto" \
+  ip='ip --color=auto'
 
 # These common commands are just too long! Abbreviate them.
 alias v="$EDITOR"
