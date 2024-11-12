@@ -51,6 +51,7 @@ neovim
 net-tools
 newsboat
 nmap
+noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 openssh
@@ -88,6 +89,7 @@ tlp
 tor
 transmission-gtk
 tree-sitter
+udisks2
 ufw
 waybar
 wget

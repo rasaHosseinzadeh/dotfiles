@@ -12,7 +12,7 @@
     "anti-brute-force-threshold": 100,
     "bind-address-ipv4": "0.0.0.0",
     "bind-address-ipv6": "::",
-    "blocklist-date": 1725139972,
+    "blocklist-date": 1731301127,
     "blocklist-enabled": true,
     "blocklist-updates-enabled": true,
     "blocklist-url": "https://github.com/Naunter/BT_BlockLists/raw/master/bt_blocklists.gz",
