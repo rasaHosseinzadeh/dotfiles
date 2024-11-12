@@ -5,27 +5,27 @@ color=""
 [ -z "$1" ] && color="\03"
 # Loop through all attached batteries and format the info
 for battery in /sys/class/power_supply/BAT?*; do
-	# If non-first battery, print a space separator.
-	[ -n "${capacity+x}" ] && printf " "
-	# Sets up the status and capacity
-	case "$(cat "$battery/status")" in
-	"Full") status="󰂅" ;;
-	"Discharging") status="󰁹" ;;
-	"Charging") status="" ;;
-	"Not charging") status="⬣" ;;
-	"Unknown") status="♻️" ;;
-	esac
-	capacity=$(cat "$battery/capacity")
+  # If non-first battery, print a space separator.
+  [ -n "${capacity+x}" ] && printf " "
+  # Sets up the status and capacity
+  case "$(cat "$battery/status")" in
+  "Full") status="󰂅" ;;
+  "Discharging") status="󰁹" ;;
+  "Charging") status="󰂄" ;;
+  "Not charging") status="" ;;
+  "Unknown") status="󰂑" ;;
+  esac
+  capacity=$(cat "$battery/capacity")
 
-	[ "$status" = "󰁹" ] && [ "$capacity" -le 100 ] && [ "$capacity" -ge 90 ] && status="󰁹"
-	[ "$status" = "󰁹" ] && [ "$capacity" -le 90 ] && [ "$capacity" -ge 80 ] && status="󰂂"
-	[ "$status" = "󰁹" ] && [ "$capacity" -le 80 ] && [ "$capacity" -ge 70 ] && status="󰂁"
-	[ "$status" = "󰁹" ] && [ "$capacity" -le 70 ] && [ "$capacity" -ge 60 ] && status="󰂀"
-	[ "$status" = "󰁹" ] && [ "$capacity" -le 60 ] && [ "$capacity" -ge 50 ] && status="󰁿"
-	[ "$status" = "󰁹" ] && [ "$capacity" -le 50 ] && [ "$capacity" -ge 40 ] && status="󰁾"
-	[ "$status" = "󰁹" ] && [ "$capacity" -le 40 ] && [ "$capacity" -ge 30 ] && status="󰁽"
-	[ "$status" = "󰁹" ] && [ "$capacity" -le 30 ] && [ "$capacity" -ge 20 ] && status="󰁼"
-	[ "$status" = "󰁹" ] && [ "$capacity" -le 20 ] && status="󰂃"
-	# Prints the info
-	printf "${color} [%s %2d%%]\n" "$status" "$capacity"
+  [ "$status" = "󰁹" ] && [ "$capacity" -le 100 ] && [ "$capacity" -ge 90 ] && status="󰁹"
+  [ "$status" = "󰁹" ] && [ "$capacity" -le 90 ] && [ "$capacity" -ge 80 ] && status="󰂂"
+  [ "$status" = "󰁹" ] && [ "$capacity" -le 80 ] && [ "$capacity" -ge 70 ] && status="󰂁"
+  [ "$status" = "󰁹" ] && [ "$capacity" -le 70 ] && [ "$capacity" -ge 60 ] && status="󰂀"
+  [ "$status" = "󰁹" ] && [ "$capacity" -le 60 ] && [ "$capacity" -ge 50 ] && status="󰁿"
+  [ "$status" = "󰁹" ] && [ "$capacity" -le 50 ] && [ "$capacity" -ge 40 ] && status="󰁾"
+  [ "$status" = "󰁹" ] && [ "$capacity" -le 40 ] && [ "$capacity" -ge 30 ] && status="󰁽"
+  [ "$status" = "󰁹" ] && [ "$capacity" -le 30 ] && [ "$capacity" -ge 20 ] && status="󰁼"
+  [ "$status" = "󰁹" ] && [ "$capacity" -le 20 ] && status="󰂃"
+  # Prints the info
+  printf "${color} [%s %2d%%]\n" "$status" "$capacity"
 done && exit 0
