@@ -1,5 +1,6 @@
-https://hnrss.org/newest?points=150&comments=25 "HackerNews"
-https://hnrss.org/bestcomments
+https://hnrss.org/newest?points=150 "~HackerNews > 150"
+https://hnrss.org/best "~HackerNews Best"
+https://hnrss.org/bestcomments "~HackerNews Best Comments"
 https://akhaliq.substack.com/feed
 http://karpathy.github.io/feed.xml ML "~Andrej Karpathy"
 https://geohot.github.io/blog/feed "~George Hotz"
