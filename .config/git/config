@@ -1,27 +1,68 @@
-[user]
-	email = rasa.hosseinzadeh@gmail.com
-	name = Rasa Hosseinzdaeh
+[branch]
+	sort = committerdate
+
+[column]
+	ui = auto
+
+[commit]
+	verbose = true
+
+[core]
+	pager = delta
+	fsmonitor = true
+	untrackedCache = true
+
+[delta]
+	navigate = true    # use n and N to move between diff sections
+	light = false
+	line-numbers = true
+
+[diff]
+	colorMoved = plain
+	algorithm = histogram
+	renames = true
+
+[feature]
+	experimental = true
+
+[fetch]
+	all = true
+
+[grep]
+	patternType = perl
+
+[help]
+	autocorrect = prompt
+
 [init]
 	defaultBranch = master
+
+[interactive]
+	diffFilter = delta --color-only
+
 [merge]
 	conflictStyle = zdiff3
 	tool = meld
-[commit]
-	verbose = true
-[help]
-	autocorrect = prompt
-[core]
-    pager = delta
-[interactive]
-    diffFilter = delta --color-only
-[delta]
-    navigate = true    # use n and N to move between diff sections
-    light = false
-    line-numbers = true
-[diff]
-    colorMoved = default
-	algorithm = histogram
-[branch]
-	sort = -committerdate
+
 [push]
 	autoSetupRemote = true
+	followTags = true
+
+[rebase]
+	autoSquash = true
+	autoStash = true
+  updateRefs = true
+
+[rerere]
+	enabled = true
+	autoupdate = true
+
+[tag]
+	sort = version:refname
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
+[user]
+	email = rasa.hosseinzadeh@gmail.com
+	name = Rasa Hosseinzdaeh
