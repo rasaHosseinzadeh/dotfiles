@@ -13,6 +13,7 @@ setopt HIST_FIND_NO_DUPS  # Do not find duplicate command when searching
 setopt HIST_REDUCE_BLANKS  # remove unnecessary blanks
 setopt INC_APPEND_HISTORY # append command to history file immediately after execution
 setopt EXTENDED_HISTORY  # record command start time
+setopt inc_append_history_time # record how long the command took
 setopt SHARE_HISTORY # share history between sessions
 setopt HIST_EXPIRE_DUPS_FIRST # Expire duplicate entries first when trimming history
 setopt HIST_IGNORE_DUPS # Dont record an entry that was just recorded again
@@ -79,6 +80,24 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+
+#-----------------------------
+# Sources
+#-----------------------------
+source $XDG_CONFIG_HOME/zsh/aliasrc
+source $XDG_CONFIG_HOME/zsh/private
+#
+#-----------------------------
+# SSH
+#-----------------------------
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
+    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+fi
+eval $(keychain --eval --quiet git_ed25519 ssh_rsa --absolute --dir "$XDG_RUNTIME_DIR"/keychain)
+
 #------------------------------
 # fzf
 #------------------------------
@@ -110,24 +129,32 @@ _fzf_comprun() {
   esac
 }
 
-#-----------------------------
-# Sources
-#-----------------------------
-source $XDG_CONFIG_HOME/zsh/aliasrc
-source $XDG_CONFIG_HOME/zsh/private
-#
-#-----------------------------
-# SSH
-#-----------------------------
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
-fi
-if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
-    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-fi
+bindkey -M emacs '\eo' fzf-cd-widget
+bindkey -M viins '\eo' fzf-cd-widget
+bindkey -M vicmd '\eo' fzf-cd-widget
+export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
 
-eval $(keychain --eval --quiet git_ed25519 ssh_rsa --absolute --dir "$XDG_RUNTIME_DIR"/keychain)
+
+#-----------------------------
+# uv
+#-----------------------------
+eval "$(uv generate-shell-completion zsh)" # you should already have these two lines
+eval "$(uvx --generate-shell-completion zsh)"
+
+# you will need to add the lines below
+# https://github.com/astral-sh/uv/issues/8432#issuecomment-2453494736
+_uv_run_mod() {
+    if [[ "$words[2]" == "run" && "$words[CURRENT]" != -* ]]; then
+        _arguments '*:filename:_files'
+    else
+        _uv "$@"
+    fi
+}
+compdef _uv_run_mod uv
+
 #-----------------------------
 # Syntax highlighting (Should be last)
 #-----------------------------
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2> /dev/null
+
+
