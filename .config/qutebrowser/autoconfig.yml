@@ -28,7 +28,10 @@ settings:
   colors.webpage.bg:
     global: white
   colors.webpage.darkmode.enabled:
-    global: true
+    global: false
+  content.javascript.clipboard:
+    global: access-paste
+    https://x.com: access-paste
   content.notifications.enabled:
     https://www.netflix.com: false
   downloads.location.directory:
