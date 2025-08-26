@@ -58,7 +58,6 @@ openssh
 p7zip
 pamixer
 patch
-pavucontrol
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
@@ -93,6 +92,7 @@ ufw
 waybar
 wget
 wildmidi
+wiremix
 wl-clipboard
 xarchiver
 yazi
