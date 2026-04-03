@@ -2,9 +2,9 @@
 
 cmds="\
  lock,swaylock -f -c 222222
-← leave Hyprland,kill -9 $(pgrep -u $USER Hyprland$)
- reboot,sudo -A reboot
-⏻ shutdown,sudo -A shutdown -h now"
+← leave Hyprland, hyprctl dispatch exit
+ reboot,hyprshutdown -t 'Restarting...' --post-cmd 'reboot'
+⏻ shutdown,hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'"
 
 choice="$(echo "$cmds" | cut -d',' -f 1 | bemenu-custom -i -fn "Hack:size=20" -l 10)" || exit 1
 
