@@ -1,7 +1,6 @@
 alacritty
-amd-ucode
 android-file-transfer
-arc-gtk-theme
+amd-ucode
 aspell
 axel
 bat
@@ -9,12 +8,10 @@ bemenu-wayland
 bluez
 bluez-utils
 chromium
-cmatrix
 cronie
 cups
 cups-pdf
 dash
-dhcpcd
 dunst
 easytag
 exfat-utils
@@ -27,6 +24,7 @@ fwupd
 fzf
 git
 git-delta
+ghostty
 grim
 hplip
 htop
@@ -34,6 +32,7 @@ hyprland
 imagemagick
 imv
 iwd
+jq
 jupyter-notebook
 keepassxc
 keychain
@@ -76,6 +75,7 @@ swaybg
 swayidle
 swaylock
 syncthing
+tealdeer
 telegram-desktop
 texinfo
 texlive-binextra
@@ -88,6 +88,7 @@ tlp
 tor
 transmission-gtk
 tree-sitter
+ttf-hack-nerd
 udisks2
 ufw
 waybar
@@ -104,3 +105,4 @@ zathura-pdf-mupdf
 zoxide
 zsh
 zsh-completions
+xdg-desktop-portal-hyprland
