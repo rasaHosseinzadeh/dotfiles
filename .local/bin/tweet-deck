@@ -1,1 +1,1 @@
-qutebrowser -B ~/.local/share/qt-tweet-deck/ -C ~/.config/qutebrowser/config.py
+QTWEBENGINE_FORCE_USE_GBM=0 qutebrowser -B ~/.local/share/qt-tweet-deck/ -C ~/.config/qutebrowser/config.py
