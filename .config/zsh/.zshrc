@@ -86,17 +86,14 @@ function y() {
 #-----------------------------
 source $XDG_CONFIG_HOME/zsh/aliasrc
 source $XDG_CONFIG_HOME/zsh/private
-#
+
 #-----------------------------
 # SSH
 #-----------------------------
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
-fi
-if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
-    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-fi
-eval $(keychain --eval --quiet git_ed25519 ssh_rsa --absolute --dir "$XDG_RUNTIME_DIR"/keychain)
+eval "$(keychain add --eval --quiet --noask \
+    "$HOME/.ssh/git_ed25519" \
+    "$HOME/.ssh/ssh_rsa"
+)"
 
 #------------------------------
 # fzf
@@ -156,5 +153,3 @@ compdef _uv_run_mod uv
 # Syntax highlighting (Should be last)
 #-----------------------------
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2> /dev/null
-
-
