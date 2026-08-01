@@ -40,6 +40,7 @@ x-scheme-handler/mid=userapp-Thunderbird-X35HH2.desktop
 x-scheme-handler/tg=org.telegram.desktop.desktop;
 x-scheme-handler/tonsite=org.telegram.desktop.desktop
 x-scheme-handler/freetube=freetube.desktop
+x-scheme-handler/slack=slack.desktop
 
 [Added Associations]
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
