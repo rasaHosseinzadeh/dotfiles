@@ -16,7 +16,7 @@ local function assign_monitor(monitor)
         hl.workspace_rule({
             workspace = tostring(slot * 10 + digit),
             monitor = monitor.name,
-            default = digit == 0,
+            default = digit == 1,
         })
     end
 
@@ -33,8 +33,10 @@ local function assign_monitor(monitor)
         end
     end
 
+    local migration_order = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }
     for _, workspace in ipairs(stale) do
-        for id = slot * 10, slot * 10 + 9 do
+        for _, digit in ipairs(migration_order) do
+            local id = slot * 10 + digit
             if not used[id] then
                 hl.dispatch(hl.dsp.workspace.change_id({ workspace = workspace, id = id }))
                 used[id] = true
