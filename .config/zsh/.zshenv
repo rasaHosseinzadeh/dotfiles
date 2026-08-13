@@ -25,7 +25,8 @@ export LESS_TERMCAP_se="$(printf '%b' '[0m')"
 export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 
-export PATH=$PATH:$HOME/.local/bin/
+typeset -U path PATH
+path+=("$HOME/.local/bin")
 
 export CARGO_HOME=$XDG_DATA_HOME/cargo
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
@@ -34,9 +35,6 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 
 
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
-
-export NNN_FIFO=/tmp/nnn.fifo
-export NNN_PLUG='o:fzopen;p:preview-tui;i:imgview;z:fzz'
 
 export TEXMFHOME=$XDG_DATA_HOME/texmf
 export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
@@ -50,21 +48,14 @@ export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 export FZF_ALT_C_COMMAND="${FZF_DEFAULT_COMMAND} --type=d ${FZF_DEFAULT_OPTS}"
 
 
-export QT_QPA_PLATFORMTHEME="gtk2"	# Have QT use gtk2 theme.
-export MOZ_USE_XINPUT2="1"		# Mozilla smooth scrolling/touchpads.
-export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
-
 export BROWSER=firefox
-export TERMINAL=alacritty
+export TERMINAL=ghostty
 export EDITOR=nvim
 export VISUAL=nvim
-
-
-export VSCODE_PORTABLE="$XDG_DATA_HOME"/vscode
 
 
 export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 
 
 export MANROFFOPT="-c"
-export MANPAGER="sh -c 'col -bx | bat -plman'" man sprintf
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"

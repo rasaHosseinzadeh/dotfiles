@@ -30,7 +30,7 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' matcher-list ''
 zstyle ':completion:*' menu select
-zstyle :compinstall filename "$HOME/.config//.zshrc"
+zstyle :compinstall filename "$ZDOTDIR/.zshrc"
 #End of added
 
 mkdir -p "$XDG_CACHE_HOME/zsh"
@@ -135,8 +135,9 @@ export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
 #-----------------------------
 # uv
 #-----------------------------
-eval "$(uv generate-shell-completion zsh)" # you should already have these two lines
-eval "$(uvx --generate-shell-completion zsh)"
+# Arch's uv package installs _uv in /usr/share/zsh/site-functions. Reuse it for
+# uvx as well instead of starting uv and uvx for every interactive shell.
+compdef _uv uvx
 
 # you will need to add the lines below
 # https://github.com/astral-sh/uv/issues/8432#issuecomment-2453494736
