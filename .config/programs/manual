@@ -1,40 +1,56 @@
-# Change defualt shell to dash
-ln -sfT dash /usr/bin/sh
+# Change default shell to dash
+sudo ln -sfT /usr/bin/dash /usr/bin/sh
 
-# Set ufw
-# Enable service
+# Install yay manually before using it to install packages from ./aur
+git clone https://aur.archlinux.org/yay.git /tmp/yay
+cd /tmp/yay
+makepkg -si
+
+# Configure and enable UFW
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
+sudo ufw enable
 
-#Time sync using systemd
-timedatectl set-ntp true
+# Time sync using systemd
+sudo timedatectl set-ntp true
 
-# Add boot partition for fwupd
-echo /boot/EFI/ >> /etc/fwupd/fwupd.conf
+# The EFI system partition is mounted at /boot. fwupd should detect it. If it
+# does not, set EspLocation=/boot under [fwupd] in /etc/fwupd/fwupd.conf.
 
-# Add hibernation:
-add resume to mkinitcpio.conf in HOOKs
-add resume=/dev/disk/by-uuid/<SWAP UUID> to /etc/defualt/grub GRUB_CMDLINE_LINUX=
+# Hibernation is configured: HOOKS contains resume and GRUB_CMDLINE_LINUX
+# contains the swap UUID. After changing either configuration, rebuild it:
+# sudo mkinitcpio -P
+# sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Run tlp
 sudo systemctl enable --now tlp.service
 
-# Enable fstrim for ssd
-sudo systemctl enable  fstrim.timer
+# Enable periodic SSD trimming
+sudo systemctl enable --now fstrim.timer
 
 # Copy Firefox profile and chromecss
 # Plugins: Dark reader - Multi container - sideberry - uBlock Origin
 
-#Start cronie
+# Start cronie
 sudo systemctl enable --now cronie.service
 # Add cron for update (use crontab -e)
 @daily export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u $USER)/bus; export DISPLAY=:0; . $HOME/.config/zsh/.zprofile; ${HOME}/.local/bin/checkup
 
-#With sudo crontab -e
+# With sudo crontab -e
 @reboot /usr/bin/updatedb
 
+# Keep Docker available for work, but do not start it automatically or through
+# socket activation. Start it only when needed.
+sudo systemctl disable --now docker.socket docker.service
+# When needed: sudo systemctl start docker
 
-# Run TLP
+# Keep printing on demand without running cups.service continuously.
+sudo systemctl disable --now cups.service
+sudo systemctl enable --now cups.socket cups.path
+
+# dhcpcd.service already manages wlan0; do not enable a duplicate instance.
+sudo systemctl disable --now dhcpcd@wlan0.service
+
 # symlink $HOME/.zshenv to .config/zsh/.zshenv
 # Mask the rfkill service
 sudo systemctl mask systemd-rfkill.service
@@ -43,13 +59,5 @@ sudo systemctl mask systemd-rfkill.service
 sudo systemctl mask systemd-rfkill.socket
 
 
-# Start MPD
+# Start MPD (Not necessary now as we use hyprland for it might change in future)
 sudo systemctl enable --now mpd.service
-
-
-
-#Legacy
-# Install sx (only for X11)
-cd /tmp
-git clone https://github.com/Earnestly/sx.git
-make PREFIX=/usr install
