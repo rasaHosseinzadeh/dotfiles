@@ -3,10 +3,9 @@
     "position": "top",
     "height": 25,
     "modules-left": ["ext/workspaces"],
-    "modules-center": ["custom/clock"],
-    "modules-right": ["custom/vol", "custom/nettraf",
-                      "custom/internet", "custom/cpu", "custom/memory",
-                      "custom/temp", "custom/light", "custom/battery",
+    "modules-center": ["clock"],
+    "modules-right": ["wireplumber", "network", "cpu", "memory",
+                      "temperature", "backlight", "battery",
                       "idle_inhibitor","hyprland/language", "bluetooth", "privacy", "tray"],
 "bluetooth": {
  "format": "",
@@ -56,7 +55,7 @@
           "26":"6",
           "27":"7",
           "28":"8",
-          "29":"9",
+          "29":"9"
          }
     },
     "idle_inhibitor": {
@@ -66,41 +65,51 @@
             "deactivated": ""
         }
     },
-    "custom/cpu": {
-        "exec": "$HOME/.local/bin/sb-cpu NOCOLOR",
-        "interval": 5
+    "wireplumber": {
+        "format": "[{icon} {volume}%]",
+        "format-muted": "[󰸈 muted]",
+        "format-icons": ["", "", ""],
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
-    "custom/memory":{
-        "exec": "$HOME/.local/bin/sb-memory NOCOLOR",
-        "interval": 5
+    "network": {
+        "format-wifi": "[ {signalStrength}%]",
+        "format-ethernet": "[🌐]",
+        "format-disconnected": "[⚠ offline]",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}"
     },
-    "custom/temp": {
-        "exec": "$HOME/.local/bin/sb-temp NOCOLOR",
-        "interval": 1
+    "cpu": {
+        "interval": 10,
+        "format": "[ {usage}%]"
     },
-    "custom/light": {
-        "exec": "$HOME/.local/bin/sb-light NOCOLOR",
-        "interval": 1
+    "memory": {
+        "interval": 10,
+        "format": "[󰍛 {used:0.1f}G]"
     },
-    "custom/battery":{
-        "exec": "$HOME/.local/bin/sb-battery NOCOLOR",
-        "interval": 5
+    "temperature": {
+        "hwmon-path-abs": "/sys/devices/platform/thinkpad_hwmon/hwmon",
+        "input-filename": "temp1_input",
+        "interval": 10,
+        "critical-threshold": 90,
+        "format": "[ {temperatureC}°C]",
+        "format-critical": "[ {temperatureC}°C]"
     },
-    "custom/internet": {
-        "exec": "$HOME/.local/bin/sb-internet NOCOLOR",
-        "interval": 5
+    "backlight": {
+        "device": "amdgpu_bl1",
+        "format": "[ {percent}%]"
     },
-    "custom/nettraf": {
-        "exec": "$HOME/.local/bin/sb-nettraf NOCOLOR",
-        "interval": 1
+    "battery": {
+        "bat": "BAT0",
+        "interval": 30,
+        "format": "[{icon} {capacity}%]",
+        "format-charging": "[󰂄 {capacity}%]",
+        "format-plugged": "[ {capacity}%]",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
-    "custom/vol": {
-        "exec": "$HOME/.local/bin/sb-volume NOCOLOR",
-        "interval": 1
-    },
-    "custom/clock": {
-        "exec": "$HOME/.local/bin/sb-clock NOCOLOR",
-        "interval": 10
+    "clock": {
+        "interval": 60,
+        "format": "[{:%a %b %d %H:%M}]",
+        "tooltip-format": "<tt>{calendar}</tt>"
     },
     "hyprland/language": {
       "format": "[{}]",

@@ -11,34 +11,33 @@ window#waybar {
 }
 
 #privacy,
-#custom-battery,
-#custom-temp,
-#custom-cpu,
-#custom-nettraf,
+#battery,
+#temperature,
+#cpu,
 #idle_inhibitor,
-#custom-clock,
+#clock,
 #language {
     color: #9F87AF;
 }
 
 #bluetooth,
-#custom-light,
-#custom-memory,
-#custom-internet,
+#backlight,
+#memory,
+#network,
 #idle_inhibitor,
-#custom-vol {
+#wireplumber {
     color: #B1DDF1;
 }
 
-#custom-light,
-#custom-clock,
-#custom-battery,
+#backlight,
+#clock,
+#battery,
 #idle_inhibitor,
-#custom-cpu,
-#custom-memory,
-#custom-temp,
-#custom-nettraf,
-#custom-internet,
+#cpu,
+#memory,
+#temperature,
+#network,
+#wireplumber,
 #language {
     padding: 0 2px;
     margin: 0 2px;
