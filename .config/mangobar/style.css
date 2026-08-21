@@ -1,0 +1,81 @@
+* {
+  font-family: "Hack Nerd Font";
+  font-size: 15px;
+  font-weight: normal;
+  color: #b1ddf1;
+  background: none;
+  padding: 0px;
+  margin: 0px 3px;
+  border-radius: 0px;
+}
+
+#bar {
+  background: none;
+  margin: 0px;
+}
+
+#bar.sel {
+  background: none;
+}
+
+#tags.active {
+  color: #282a36;
+  background: #9f87af;
+}
+
+#tags,
+#tags.occupied {
+  color: #9f87af;
+}
+
+#tags.urgent {
+  color: #ff5555;
+}
+
+#tags.empty {
+  color: #666666;
+}
+
+#layout {
+  color: #b1ddf1;
+}
+
+#clock {
+  color: #9f87af;
+}
+
+#volume {
+  color: #b1ddf1;
+}
+
+#network {
+  color: #9f87af;
+}
+
+#cpu {
+  color: #b1ddf1;
+}
+
+#custom-bluetooth {
+  color: #9f87af;
+}
+
+#mem {
+  color: #b1ddf1;
+}
+
+#brightness {
+  color: #9f87af;
+}
+
+#battery {
+  color: #b1ddf1;
+}
+
+#keyboardlayout {
+  color: #9f87af;
+}
+
+#tray {
+  color: #b1ddf1;
+}

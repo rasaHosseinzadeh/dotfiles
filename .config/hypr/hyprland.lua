@@ -67,7 +67,7 @@ hl.on("hyprland.start", function()
 		"dunst",
 		"waybar",
 		"swaybg -c fill -i $HOME/pictures/wallpaper/bg.jpg",
-		[[swayidle -w timeout 3600 "swaylock -f -c 222222" timeout 3600 "systemctl suspend-then-hibernate" before-sleep "swaylock -f -c 222222"]],
+		[[swayidle -w timeout 900 "swaylock -f -c 222222" timeout 3600 "systemctl suspend-then-hibernate" before-sleep "swaylock -f -c 222222"]],
 	}) do
 		hl.exec_cmd(command)
 	end
@@ -172,11 +172,11 @@ run(mod .. " + ALT + P", "keepassxc")
 run(mod .. " + ALT + V", terminal .. " -e wiremix")
 run(
 	mod .. " + ALT + B",
-	"sudo systemctl is-active --quiet bluetooth && sudo systemctl stop bluetooth || sudo systemctl start bluetooth"
+	"bluetooth-toggle"
 )
+run(mod .. " + CTRL + W", "networkmanager_dmenu")
 run(mod .. " + CTRL + M", terminal .. " -e ncmpcpp")
 run(mod .. " + ALT + S", "bm-scrot")
-run(mod .. " + S", "scrot")
 run(mod .. " + SHIFT + H", terminal .. " -e yazi")
 
 bind(mod .. " + P", hl.dsp.layout("swapwithmaster"))

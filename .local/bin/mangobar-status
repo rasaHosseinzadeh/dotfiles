@@ -1,0 +1,15 @@
+#!/bin/dash
+
+case $1 in
+	bluetooth)
+		bluetooth=?
+		controller=$(timeout -k 1 1 bluetoothctl show 2>/dev/null)
+		if printf '%s\n' "$controller" | grep -q 'Powered: yes'; then
+			bluetooth=$(timeout -k 1 1 bluetoothctl devices Connected 2>/dev/null |
+				awk '/^Device / { count++ } END { print count + 0 }')
+		elif printf '%s\n' "$controller" | grep -q 'Powered: no'; then
+			bluetooth=off
+		fi
+		printf '[ %s]' "$bluetooth"
+		;;
+esac

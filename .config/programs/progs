@@ -33,13 +33,13 @@ htop
 hyprland
 imagemagick
 imv
-iwd
 jq
 jupyter-notebook
 keepassxc
 keychain
 lazygit
 libnotify
+lxqt-policykit
 maim
 man-db
 man-pages
@@ -50,6 +50,8 @@ mpv
 ncmpcpp
 neovim
 net-tools
+networkmanager
+networkmanager-dmenu
 newsboat
 nmap
 nodejs
@@ -105,7 +107,9 @@ wildmidi
 wiremix
 wl-clipboard
 xarchiver
+xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
+xdg-desktop-portal-wlr
 yazi
 yt-dlp
 zathura

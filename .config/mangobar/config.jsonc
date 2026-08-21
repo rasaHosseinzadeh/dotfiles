@@ -1,0 +1,63 @@
+{
+  "layer": "top",
+  "height": 15,
+  "buffer-scale": 1,
+
+  "modules-left": ["workspaces", "layout"],
+  "modules-center": ["clock#time"],
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "cpu",
+    "custom/bluetooth",
+    "memory",
+    "backlight",
+    "battery",
+    "keyboardlayout",
+    "tray"
+  ],
+
+  "workspaces": {
+    "hide-empty": true,
+    "tag-names": ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+    "on-click": "activate",
+    "on-click-right": "toggle"
+  },
+  "layout": { "format": "{}" },
+  "clock#time": { "format": "[{:L%a %b %d %H:%M}]" },
+  "pulseaudio": {
+    "format": "[{icon} {volume}%]",
+    "format-muted": "[󰸈 muted]",
+    "icons": ["", "", ""],
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 2%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"
+  },
+  "network": {
+    "format": "[ {ifname}]",
+    "format-alt": "[↓{down} ↑{up}]",
+    "on-click": "networkmanager_dmenu"
+  },
+  "custom/bluetooth": {
+    "exec": "mangobar-status bluetooth",
+    "interval": 2,
+    "format": "{}",
+    "on-click": "bluetooth-toggle"
+  },
+  "memory": { "format": "[󰍛 {}%]", "interval": 2 },
+  "cpu": { "format": "[ {usage}%]", "interval": 10 },
+  "backlight": {
+    "device": "amdgpu_bl1",
+    "format": "[ {percent}%]",
+    "on-scroll-up": "light -A 2",
+    "on-scroll-down": "light -U 2"
+  },
+  "battery": {
+    "format": "[{icon} {percent}%]",
+    "icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "icon-charging": "󰂄",
+    "icon-full": "󰁹"
+  },
+  "keyboardlayout": { "format": "[{}]" },
+  "tray": { "icon-size": 15, "spacing": 0 }
+}

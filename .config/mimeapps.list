@@ -41,6 +41,7 @@ x-scheme-handler/tg=org.telegram.desktop.desktop;
 x-scheme-handler/tonsite=org.telegram.desktop.desktop
 x-scheme-handler/freetube=freetube.desktop
 x-scheme-handler/slack=slack.desktop
+x-scheme-handler/codex=chatgpt.desktop
 
 [Added Associations]
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;

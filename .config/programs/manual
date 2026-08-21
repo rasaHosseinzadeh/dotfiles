@@ -48,8 +48,12 @@ sudo systemctl disable --now docker.socket docker.service
 sudo systemctl disable --now cups.service
 sudo systemctl enable --now cups.socket cups.path
 
-# dhcpcd.service already manages wlan0; do not enable a duplicate instance.
-sudo systemctl disable --now dhcpcd@wlan0.service
+# NetworkManager manages Wi-Fi, addresses, routes, and DNS. Do not run iwd or
+# dhcpcd alongside it. Run this handoff locally because it temporarily
+# interrupts the network connection.
+sudo systemctl disable iwd.service dhcpcd.service dhcpcd@wlan0.service
+sudo systemctl enable NetworkManager.service
+sudo systemctl stop iwd.service dhcpcd.service dhcpcd@wlan0.service && sudo systemctl start NetworkManager.service
 
 # symlink $HOME/.zshenv to .config/zsh/.zshenv
 # Mask the rfkill service
@@ -59,5 +63,4 @@ sudo systemctl mask systemd-rfkill.service
 sudo systemctl mask systemd-rfkill.socket
 
 
-# Start MPD (Not necessary now as we use hyprland for it might change in future)
-sudo systemctl enable --now mpd.service
+# MPD is started by the desktop session; do not also enable mpd.service.

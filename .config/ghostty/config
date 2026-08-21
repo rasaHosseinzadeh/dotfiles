@@ -1,0 +1,19 @@
+# colors
+background = 282a36
+foreground = ebdbb2
+
+# font
+font-family = "Hack Nerd Font"
+font-size   = 16
+
+# window
+window-decoration = none
+background-opacity = 1.0
+
+# keybindings
+keybind = alt+v=paste_from_clipboard
+keybind = alt+c=copy_to_clipboard
+keybind = alt+l=increase_font_size:1
+keybind = alt+h=decrease_font_size:1
+keybind = alt+k=scroll_page_lines:-1
+keybind = alt+j=scroll_page_lines:1

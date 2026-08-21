@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if timeout -k 1 1 bluetoothctl show 2>/dev/null | grep -q 'Powered: yes'; then
+	timeout -k 1 2 bluetoothctl power off
+else
+	timeout -k 1 2 bluetoothctl power on
+fi
