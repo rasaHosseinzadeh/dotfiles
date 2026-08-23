@@ -1,15 +1,34 @@
 #!/bin/dash
 
-case $1 in
-	bluetooth)
-		bluetooth=?
-		controller=$(timeout -k 1 1 bluetoothctl show 2>/dev/null)
-		if printf '%s\n' "$controller" | grep -q 'Powered: yes'; then
-			bluetooth=$(timeout -k 1 1 bluetoothctl devices Connected 2>/dev/null |
-				awk '/^Device / { count++ } END { print count + 0 }')
-		elif printf '%s\n' "$controller" | grep -q 'Powered: no'; then
-			bluetooth=off
+bluetooth_status() {
+	bluetooth=?
+	controller=$(timeout -k 1 1 bluetoothctl show 2>/dev/null)
+	if printf '%s\n' "$controller" | grep -q 'Powered: yes'; then
+		bluetooth=$(timeout -k 1 1 bluetoothctl devices Connected 2>/dev/null |
+			awk '/^Device / { count++ } END { print count + 0 }')
+	elif printf '%s\n' "$controller" | grep -q 'Powered: no'; then
+		bluetooth=off
+	fi
+	printf '[ %s]' "$bluetooth"
+}
+
+bluetooth_notify() {
+	controller=$(timeout -k 1 1 bluetoothctl show 2>/dev/null)
+	if printf '%s\n' "$controller" | grep -q 'Powered: yes'; then
+		devices=$(timeout -k 1 1 bluetoothctl devices Connected 2>/dev/null |
+			sed 's/^Device [^ ]* //')
+		if [ -n "$devices" ]; then
+			count=$(printf '%s\n' "$devices" | awk 'NF { count++ } END { print count + 0 }')
+			notify-send "Bluetooth — $count connected" "$devices"
+		else
+			notify-send 'Bluetooth' 'No connected devices'
 		fi
-		printf '[ %s]' "$bluetooth"
-		;;
+	else
+		notify-send 'Bluetooth' 'Powered off'
+	fi
+}
+
+case $1 in
+	bluetooth) bluetooth_status ;;
+	bluetooth-notify) bluetooth_notify ;;
 esac

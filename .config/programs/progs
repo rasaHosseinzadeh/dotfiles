@@ -7,6 +7,7 @@ bat
 bemenu-wayland
 bluez
 bluez-utils
+brightnessctl
 chromium
 cronie
 cups
@@ -30,7 +31,6 @@ grim
 gvfs-mtp
 hplip
 htop
-hyprland
 imagemagick
 imv
 jq
@@ -40,7 +40,6 @@ keychain
 lazygit
 libnotify
 lxqt-policykit
-maim
 man-db
 man-pages
 mediainfo
@@ -101,14 +100,12 @@ udisks2
 ueberzugpp
 ufw
 uv
-waybar
 wget
 wildmidi
 wiremix
 wl-clipboard
 xarchiver
 xdg-desktop-portal-gtk
-xdg-desktop-portal-hyprland
 xdg-desktop-portal-wlr
 yazi
 yt-dlp

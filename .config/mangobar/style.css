@@ -48,16 +48,13 @@
   color: #b1ddf1;
 }
 
-#network {
+#network,
+#custom-bluetooth {
   color: #9f87af;
 }
 
 #cpu {
   color: #b1ddf1;
-}
-
-#custom-bluetooth {
-  color: #9f87af;
 }
 
 #mem {

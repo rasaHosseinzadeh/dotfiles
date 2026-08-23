@@ -62,10 +62,10 @@ shift + XF86AudioRaiseVolume
 shift + XF86AudioLowerVolume
     pactl set-sink-volume @DEFAULT_SINK@ -1%; kill -51 $(pidof dwmblocks)
 XF86MonBrightnessUp
-    light -A 5; kill -50 $(pidof dwmblocks)
+    brightnessctl set +5%; kill -50 $(pidof dwmblocks)
 XF86MonBrightnessDown
-    light -U 5; kill -50 $(pidof dwmblocks)
+    brightnessctl set 5%-; kill -50 $(pidof dwmblocks)
 shift + XF86MonBrightnessUp
-    light -A 1; kill -50 $(pidof dwmblocks)
+    brightnessctl set +1%; kill -50 $(pidof dwmblocks)
 shift + XF86MonBrightnessDown
-    light -U 1; kill -50 $(pidof dwmblocks)
+    brightnessctl set 1%-; kill -50 $(pidof dwmblocks)
