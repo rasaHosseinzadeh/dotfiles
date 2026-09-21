@@ -1,0 +1,22 @@
+#!/usr/bin/python3
+import os
+import subprocess
+
+def shorten(name):
+    name = ''.join(c for c in name if c.isprintable())
+    return name if len(name) <= 8 else name[:8] + '…'
+
+def main():
+    try:
+        output = subprocess.check_output(
+            ['nmcli', '--colors', 'no', '--escape', 'no', '-t', '-f',
+             'IN-USE,SSID', 'device', 'wifi', 'list', '--rescan', 'no'],
+            text=True, timeout=2, stderr=subprocess.DEVNULL,
+            env={**os.environ, 'LC_ALL': 'C'})
+        name = next((line[2:] for line in output.splitlines() if line.startswith('*:')), 'offline')
+    except (OSError, subprocess.SubprocessError):
+        name = 'unknown'
+    print(f'[ {shorten(name)}]')
+
+if __name__ == '__main__':
+    main()

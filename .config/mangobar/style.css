@@ -5,7 +5,7 @@
   color: #b1ddf1;
   background: none;
   padding: 0px;
-  margin: 0px 3px;
+  margin: 0px;
   border-radius: 0px;
 }
 
@@ -48,7 +48,7 @@
   color: #b1ddf1;
 }
 
-#network,
+#custom-wifi,
 #custom-bluetooth {
   color: #9f87af;
 }
@@ -76,3 +76,29 @@
 #tray {
   color: #b1ddf1;
 }
+
+
+/* Natural widget widths, with alternating status colors. */
+#volume { color: #b1ddf1; }
+#custom-wifi { color: #9f87af; }
+#cpu { color: #b1ddf1; }
+#custom-temperature { color: #9f87af; }
+#custom-bluetooth { color: #b1ddf1; }
+#mem { color: #9f87af; }
+#brightness { color: #b1ddf1; }
+#battery { color: #9f87af; }
+#custom-language { color: #b1ddf1; }
+#tray { color: #9f87af; }
+
+/* Alternating colors including the compact speed display. */
+#volume { color: #b1ddf1; }
+#custom-wifi { color: #9f87af; }
+#custom-speed { color: #b1ddf1; }
+#cpu { color: #9f87af; }
+#custom-temperature { color: #b1ddf1; }
+#custom-bluetooth { color: #9f87af; }
+#mem { color: #b1ddf1; }
+#brightness { color: #9f87af; }
+#battery { color: #b1ddf1; }
+#custom-language { color: #9f87af; }
+#tray { color: #b1ddf1; }

@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+"""Find the CPU sensor by driver name, independent of hwmon numbering."""
+from pathlib import Path
+
+def cpu_temperature():
+    for preferred in ('k10temp', 'coretemp', 'thinkpad'):
+        for device in Path('/sys/class/hwmon').glob('hwmon*'):
+            try:
+                if (device / 'name').read_text().strip() == preferred:
+                    return round(int((device / 'temp1_input').read_text()) / 1000)
+            except (OSError, ValueError):
+                continue
+    return None
+
+if __name__ == '__main__':
+    value = cpu_temperature()
+    print(f'[ {value}°C]' if value is not None else '[ --°C]')

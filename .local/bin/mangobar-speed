@@ -1,0 +1,46 @@
+#!/usr/bin/python3
+"""Ten fixed-width characters: download/upload, B/K/M/G bytes per second."""
+import json
+import os
+from pathlib import Path
+import time
+
+def compact(value):
+    for unit in 'BKMG':
+        if value < 999.5 or unit == 'G':
+            return f'{min(999, round(value)):3d}{unit}'
+        value /= 1024
+
+def main():
+    interface = ''
+    for line in Path('/proc/net/route').read_text().splitlines()[1:]:
+        fields = line.split()
+        if fields[1] == '00000000' and int(fields[3], 16) & 1:
+            interface = fields[0]
+            break
+    cache = Path(os.environ.get('XDG_RUNTIME_DIR', f'/run/user/{os.getuid()}')) / 'mangobar-speed.json'
+    try:
+        old = json.loads(cache.read_text())
+    except (OSError, ValueError):
+        old = {}
+    now = time.monotonic()
+    rx = tx = 0
+    if interface:
+        base = Path('/sys/class/net') / interface / 'statistics'
+        rx = int((base / 'rx_bytes').read_text())
+        tx = int((base / 'tx_bytes').read_text())
+    down = up = 0
+    elapsed = now - old.get('time', now)
+    if interface and old.get('interface') == interface and 0 < elapsed < 30:
+        down = max(0, rx - old['rx']) / elapsed
+        up = max(0, tx - old['tx']) / elapsed
+    tmp = cache.with_suffix(f'.{os.getpid()}.tmp')
+    tmp.write_text(json.dumps(dict(interface=interface, time=now, rx=rx, tx=tx)))
+    tmp.replace(cache)
+    print(f'↓{compact(down)}↑{compact(up)}')
+
+if __name__ == '__main__':
+    try:
+        main()
+    except (OSError, ValueError, KeyError):
+        print('↓  --↑  --')

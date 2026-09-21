@@ -2,40 +2,59 @@
   "layer": "top",
   "height": 15,
   "buffer-scale": 1,
-
-  "modules-left": ["workspaces", "layout"],
-  "modules-center": ["clock#time"],
+  "modules-left": [
+    "workspaces",
+    "layout"
+  ],
+  "modules-center": [
+    "clock#time"
+  ],
   "modules-right": [
     "pulseaudio",
-    "network",
+    "custom/wifi",
+    "custom/speed",
     "cpu",
+    "custom/temperature",
     "custom/bluetooth",
     "memory",
     "backlight",
     "battery",
-    "keyboardlayout",
+    "custom/language",
     "tray"
   ],
-
   "workspaces": {
     "hide-empty": true,
-    "tag-names": ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+    "tag-names": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
     "on-click": "activate",
     "on-click-right": "toggle"
   },
-  "layout": { "format": "{}" },
-  "clock#time": { "format": "[{:L%a %b %d %H:%M}]" },
+  "layout": {
+    "format": "{}"
+  },
+  "clock#time": {
+    "format": "[{:L%a %b %d %H:%M}]"
+  },
   "pulseaudio": {
     "format": "[{icon} {volume}%]",
     "format-muted": "[󰸈 muted]",
-    "icons": ["", "", ""],
+    "icons": [
+      "",
+      "",
+      ""
+    ],
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 2%+",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"
-  },
-  "network": {
-    "format": "[]",
-    "format-alt": "[↓{down} ↑{up}]"
   },
   "custom/bluetooth": {
     "exec": "mangobar-status bluetooth",
@@ -44,8 +63,14 @@
     "on-click": "bluetooth-toggle",
     "on-click-right": "mangobar-status bluetooth-notify"
   },
-  "memory": { "format": "[󰍛 {}%]", "interval": 2 },
-  "cpu": { "format": "[ {usage}%]", "interval": 10 },
+  "memory": {
+    "format": "[󰍛 {}%]",
+    "interval": 2
+  },
+  "cpu": {
+    "format": "[ {usage}%]",
+    "interval": 10
+  },
   "backlight": {
     "device": "amdgpu_bl1",
     "format": "[ {percent}%]",
@@ -54,10 +79,46 @@
   },
   "battery": {
     "format": "[{icon} {percent}%]",
-    "icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
     "icon-charging": "󰂄",
     "icon-full": "󰁹"
   },
-  "keyboardlayout": { "format": "[{}]" },
-  "tray": { "icon-size": 15, "spacing": 0 }
+  "tray": {
+    "icon-size": 15,
+    "spacing": 0
+  },
+  "custom/wifi": {
+    "exec": "/home/rasa/.local/bin/mangobar-wifi",
+    "interval": 5,
+    "format": "{}",
+    "on-click": "ghostty --class=com.rasa.nmtui -e nmtui connect",
+    "max-length": 120
+  },
+  "custom/temperature": {
+    "exec": "/home/rasa/.local/bin/mangobar-temperature",
+    "interval": 5,
+    "format": "{}"
+  },
+  "custom/language": {
+    "exec": "/home/rasa/.local/bin/mangobar-language",
+    "interval": 1,
+    "format": "{}"
+  },
+  "custom/speed": {
+    "exec": "/home/rasa/.local/bin/mangobar-speed",
+    "interval": 2,
+    "format": "{}"
+  }
 }
