@@ -7,6 +7,7 @@ font-family = "Hack Nerd Font"
 font-size   = 16
 
 # window
+window-inherit-working-directory = false
 window-decoration = none
 background-opacity = 1.0
 
